@@ -3,6 +3,7 @@
 A Roblox project synced into Roblox Studio with [Rojo](https://rojo.space).
 
 - Game design: [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md)
+- UI mockups: [docs/mockups/](docs/mockups/)
 - Prompts for building it with Claude Code: [docs/PROMPTS.md](docs/PROMPTS.md)
 - Project rules Claude Code reads automatically: [CLAUDE.md](CLAUDE.md)
 

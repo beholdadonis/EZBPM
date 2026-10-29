@@ -1,8 +1,22 @@
 # CLAUDE.md
 
 Roblox game project. The full game design is in `docs/GAME_DESIGN.md`; read it
-before working on any gameplay feature and follow it. Ready-made prompts for
-each milestone are in `docs/PROMPTS.md`.
+before working on any gameplay feature and follow it. UI mockups to match are
+in `docs/mockups/`. Ready-made prompts for each milestone are in
+`docs/PROMPTS.md`.
+
+## Keep the design doc current
+
+Whenever the owner shares new information about the game (a new rule, a
+change of mind, a new mode, numbers, names), update `docs/GAME_DESIGN.md`
+first, then build from it. If new info conflicts with the doc, ask which one
+is right before changing anything. Mark any number you pick yourself as
+**(suggested)**.
+
+## Don't build
+
+- **Admin system:** the owner will bring over the admin system from their
+  other game, WYR: Disasters. Leave room for it, but don't build one.
 
 ## The person you're working with
 
@@ -41,7 +55,10 @@ requires ModuleScripts; don't scatter many top-level scripts.
   by part names or hard-coded positions.
 - All tunable numbers go in `src/shared/Config.luau`.
 - Each game mode is a ModuleScript in `src/server/Modes/` with the same
-  interface, registered with the round system.
+  interface, registered with the round system. Each rule-change card is a
+  ModuleScript in `src/server/Cards/`.
+- The game must work on PC, mobile and console: every action needs keyboard,
+  touch and controller input, and keys must be rebindable.
 - Wrap DataStore calls in `pcall` with retries; save on leave and on
   `game:BindToClose`.
 - Don't use deprecated APIs (`wait`, `spawn`, `delay`); use `task.*`.
@@ -52,6 +69,7 @@ requires ModuleScripts; don't scatter many top-level scripts.
 - Gameplay can only be tested in Studio. After each feature, give the owner a
   short test checklist: how to start a test server with 2+ players
   (Test tab, Clients and Servers), and what they should see.
+- For UI work, compare against the matching image in `docs/mockups/`.
 
 ## Workflow
 

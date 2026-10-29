@@ -1,59 +1,56 @@
 # Prompts for Claude Code
 
 Copy one prompt at a time into Claude Code (run from this repo). Test in Studio
-before moving to the next one.
+before moving to the next one. Milestone numbers match section 16 of
+`docs/GAME_DESIGN.md`.
 
 ## Milestone prompts
 
-**1. Round system**
+**1. Office and match loop**
 
-> Read CLAUDE.md and docs/GAME_DESIGN.md. Build Milestone 1: the round system
-> skeleton with lobby, intermission with a mode vote, a placeholder mode that
-> just waits 30 seconds, and a results screen, then loop. Replace the sample
-> Hello scripts. Tell me how to test it with 2 players in Studio.
+> Read CLAUDE.md and docs/GAME_DESIGN.md. Build Milestone 1: the office lobby
+> and match loop with a placeholder mode, exactly as section 5 describes
+> (doors open after the map loads, 5 rounds per match, mode vote each round,
+> results pause on the map, back to the office for a 40-second intermission
+> with the map vote in the last 15 seconds, late joiners, AFK toggle and
+> detection). Replace the sample Hello scripts. Give me a command-bar script
+> that builds a simple greybox office and test map with the right tags, and
+> tell me how to test it with 2 players in Studio.
 
-**2. Hide and Seek**
+**2. Hide and seek**
 
-> Build Milestone 2: Hide and Seek with both the Infection and Classic
-> variants, exactly as the design doc describes. Also give me a script I can
-> paste into Studio's command bar that builds a simple greybox test map with
-> the right tags, so I can test before the real map exists.
+> Build Milestone 2: the hide and seek core from section 7.1 on the greybox
+> test map. Tell me how to test it with 3 players.
 
 **3. Movement**
 
-> Build Milestone 3: sprint with stamina, crouch, trampolines, slides and ball
-> pit zones, using the tags from the design doc. Tell me exactly how to set up
-> and tag a trampoline, a slide and a ball pit in Studio.
+> Build Milestone 3: the movement kit from section 6 and the camera rules
+> from section 4. Leave the flashstep's afterimage look simple for now; I'll
+> send examples. Tell me how to tag climbable nets, slides and trampolines.
 
-**4. Real map**
+**4 onward**
 
-> I've started building the real map in Studio. Give me a checklist of every
-> tag I need to place, how many of each, and how to check nothing is missing.
-> Then add a server check that warns in the Output window if a required tag is
-> missing.
+> Build Milestone N from docs/GAME_DESIGN.md.
 
-**5. Combat modes**
+For the UI milestone, add: "Match the images in docs/mockups/."
 
-> Build Milestone 5: Dodgeball Frenzy and Glove Brawl, plus the item system
-> for dodgeballs and boxing gloves. All hits must be validated on the server.
+## Adding or changing game info
 
-**6 to 9:** use the same pattern: "Build Milestone N from the design doc."
+> Here's new info about the game: [your info]. Update docs/GAME_DESIGN.md
+> first and show me what changed, then we'll build it.
 
-## Describing changes and bugs
+## Describing bugs
 
 Claude does best with specifics. Include:
 
-- **What you did:** "I started a test with 3 players and the seeker tagged
+- **What you did:** "I started a test with 3 players and the seeker bonked
   someone."
-- **What you expected:** "They should have become a seeker."
-- **What happened:** "Nothing happened, and the timer kept going."
+- **What you expected:** "They should have ragdolled and become a seeker."
+- **What happened:** "They ragdolled but stayed a hider."
 - **Any red text from the Output window,** copied exactly.
 
-For new ideas, say what the player experiences, not how to code it:
+For new ideas, describe what the player experiences, not how to code it:
 
-- Good: "When someone gets tagged, play a funny squeak, show 'CAUGHT!' over
-  their head for 2 seconds, and shake the seeker's camera a little."
-- Too vague: "Make tagging better."
-
-To change the game's rules, ask Claude to update `docs/GAME_DESIGN.md` first,
-then build from it, so the doc always matches the game.
+- Good: "When someone gets bonked, play a big squeak, show 'BONKED!' on
+  their screen, and shake the seeker's camera a little."
+- Too vague: "Make bonking better."

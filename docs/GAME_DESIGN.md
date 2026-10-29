@@ -1,214 +1,439 @@
-# Game Design: Playplace Panic (working title)
+# Game Design
 
-> Rename this anytime. The name only appears in this doc and in-game UI text.
+> **Working title:** not decided yet. Use "the game" in code and UI text until
+> the owner picks a name.
+>
+> This doc is the single source of truth. When the owner shares new info,
+> update this doc first, then build from it. Numbers marked **(suggested)**
+> were picked by Claude, not the owner; they are safe defaults to tune after
+> playtesting.
 
-## Pitch
+## 1. Pitch
 
-A goofy multiplayer party game set in a giant indoor kids' playground after
-hours. Up to 10 friends run, slide, bounce and crawl through a huge neon jungle
-gym playing hide and seek, dodgeball and fistfights. The fun comes from chaos
-with friends, not from skill or grinding.
+A goofy multiplayer party game set in giant indoor play places. Up to 30
+players run, slide, climb and flashstep through huge multi-floor jungle gyms
+playing hide and seek, fighting and more party modes. It should feel **tense
+but funny**: heart-pounding when a seeker walks past your hiding spot, then
+pure chaos a second later.
 
-Inspired by the *feel* of the Steam game **Goofy Gorillas** (as seen in SMii7Y's
-videos). This game must be original: its own name, map, art, sounds and UI. Do
-not copy that game's name, assets or text.
+Inspired by the Steam game **Goofy Gorillas**, but fully original: its own
+name, maps, art, sounds and UI. Nothing is copied from that game.
 
-## Design pillars
+The game will be **published publicly** on Roblox for **PC, mobile and
+console at launch** (built and tested on PC first, but mobile and console
+controls must be ready before release).
 
-1. **Chaos with friends.** Every mode should create funny moments to talk
-   about. Physics, knockback and bad hiding spots are features.
-2. **Childhood nostalgia.** Ball pits, tube slides, nets, trampolines,
-   birthday-party rooms, arcade tokens.
-3. **Easy to understand in 5 seconds.** One-line rules per mode, shown on
-   screen at the start of each round.
-4. **Short rounds.** 2 to 4 minutes, then straight into the next one.
+## 2. Feel and sound
 
-## Players and social
+- Mix of **tense-but-funny** and **goofy chaos**.
+- **Music:** goofy, upbeat play-place music overall. For a hider, the music
+  turns tense (quieter, heartbeat) when a seeker gets close.
+- **Footsteps are loud and matter:** sprinting is loud, walking is normal,
+  crouching is silent.
+- Silly sounds everywhere: squeaky hammer, boings, ragdoll flops.
 
-- 2 to 10 players per server (set Max Players to 10 in Game Settings).
-- Roblox's built-in voice chat is already proximity-based for players who have
-  it enabled, so we do not build our own voice system. Text chat works as
-  normal. The game must be fully playable without voice.
+## 3. Players and avatars
 
-## Characters
+- **Up to 30 players per server.**
+- Players use **their own Roblox avatars in R6** (set the experience's avatar
+  type to R6 in Game Settings). R6 bodies are all the same size, so hiding is
+  fair.
+- During hide and seek, **really large accessories are removed** (wings,
+  giant hats, huge backpacks); normal hats and hair stay. Revisit after
+  playtesting.
+- **Name tags are hidden for everyone** during hide and seek rounds.
+- **Chat:** normal Roblox text and voice chat at all times.
 
-- Everyone spawns as the same plain, blank mannequin-style character (a custom
-  `StarterCharacter`). This is the goofy look and keeps hiding fair.
-- Players personalise the mannequin with unlockable cosmetics: hats, hair,
-  glasses, shirts, pants, shoes.
-- Display names float above heads in the lobby, but are hidden during hide and
-  seek rounds.
+## 4. Camera
 
-## Movement
-
-| Action | How it works |
+| Mode type | Camera |
 |---|---|
-| Run / jump | Normal Roblox controls. |
-| Sprint | Hold Shift. Uses a stamina bar that refills when not sprinting. |
-| Crouch / crawl | Hold C or Ctrl. Lower and slower, fits through crawl tubes. |
-| Slides | Roblox characters don't slide down slopes on their own, so slides need a small custom mechanic: entering a slide pushes the player along it, faster on steeper sections. |
-| Trampolines | Touching one launches the player upward. Runs in a LocalScript, because each player's own client controls their character's physics. |
-| Ball pits | Player sinks to chest height, moves slowly and is harder to see. Use anchored decorative balls plus an invisible "submerge zone", never thousands of loose physics balls (that would lag the server). |
+| Hide and seek, tag (and similar) | **First person**, locked |
+| Everything else (fighting, office) | Third person, free zoom with a max distance of 20 studs **(suggested)** |
 
-## The map: the jungle gym
+## 5. Session flow
 
-One big multi-floor indoor play place, lit by neon pink, purple and blue lights
-with dark padded walls. It should feel slightly creepy after hours.
+### The office (lobby)
 
-Areas (build in Roblox Studio, not in code):
+Everyone spawns in an **office**. (Not a bathroom: Roblox restricts
+experiences set in private spaces like bathrooms to ID-verified 17+ users.)
 
-- **Main play structure:** 3 floors of platforms, nets, ladders and crawl tubes.
-- **Big ball pit** at the back, large enough for a fight arena.
-- **Small ball pit** near the entrance.
-- **Giant tube slide** from the top floor to the big ball pit, plus 2 smaller
-  open slides.
-- **Trampoline zone.**
-- **Party room** with tables, balloons and a cake.
-- **Front desk** with a computer and a sign-in counter.
-- **Arcade corner** with a few cabinets and a prize counter.
-- **Mini soccer pitch** with goals and a working score display.
-- **Bathrooms.**
-- **Lobby area** near the entrance where players wait between rounds.
+The office has:
+- **Big double doors on one wall**, with the countdown above them.
+- **Vending machines:** walk up to one to open the **shop**.
+- **Lockers:** walk up to one to **equip** titles, hammer skins, afterimage
+  colors, emotes and taunts.
+- **Map vote board.**
+- **A TV showing the current round live**, for late joiners and AFK players.
+- **Leaderboards** (see section 13).
+- Space to hang out. **Mini activities: decided later.**
+
+### Match loop
+
+1. **Map loads behind the office doors.** Once the map has fully loaded for
+   players, **the doors swing open**.
+2. Players walk through into the map's **entrance hallway** (cubbies, shoe
+   racks, sign-in desk), which opens into the play area.
+3. **A match is 5 rounds on the same map.** Before each round, players
+   **vote on the mode** (only modes, never the map, between rounds).
+4. **Between rounds 1 to 5, players stay on the map.** The results screen and
+   the next mode vote pop up there (about 15 to 20 seconds total
+   **(suggested)**), then the next round starts.
+5. **After round 5,** everyone returns to the office for a **40-second
+   intermission**. The **map vote** opens for the last 15 seconds.
+6. Repeat with the winning map.
+
+### Each round can have
+
+- **Map lighting variation (not a card):** 50/50 each round, either all
+  lights on, or some lights off. When some are off, some areas are dimmed and
+  some lights flicker. It must never be very dark or very bright.
+- **A rule-change card:** 1 in 3 chance per round (section 8).
+
+### Late joiners and AFK
+
+- **Late joiners** wait in the office (and can watch the TV) until the next
+  round starts.
+- **AFK:** both a **manual AFK toggle** and **auto-detection** after 60
+  seconds without input **(suggested)**. AFK players skip rounds and stay in
+  the office.
+
+## 6. Movement
+
+| Move | How it works |
+|---|---|
+| Sprint | Hold to run faster. Uses stamina. |
+| Crouch / crawl | Lower, slower, silent footsteps; fits through crawl tubes and under tables. |
+| Slide | Press crouch while sprinting to slide along the floor, ending in a crouch. Uses stamina. |
+| Climb | Walk into a climbable net or wall to climb it, like a ladder. Uses stamina. |
+| **Flashstep** | A quick sidestep that leaves a short-lived **afterimage** behind (you never turn invisible). Uses stamina and has a cooldown. **Details pending the owner's examples.** |
+
+- **Stamina** is used by sprinting, flashstep, climbing and sliding, and
+  refills when not in use.
+- **Seekers are slightly faster than hiders**, about 10% **(suggested)**.
+- Trampolines only bounce you when you're on a trampoline surface.
+
+### Controls
+
+All keys are **fully rebindable** in settings. Defaults **(suggested)**:
+
+| Action | PC | Console | Mobile |
+|---|---|---|---|
+| Sprint | Shift | Left stick click | On-screen button |
+| Crouch / slide | C | B / Circle | On-screen button |
+| Flashstep | Q | LB / L1 | On-screen button |
+| Shove | E | RB / R1 | On-screen button |
+| Taunt | T | D-pad up | On-screen button |
+| Use item | F | Y / Triangle | On-screen button |
+| Swing / punch | Left click | RT / R2 | On-screen button |
+
+## 7. Game modes
+
+Launch modes: **Hide and seek** and **Fighting**. Later: dodgeball, prop
+hunt, tag, hot potato and more.
+
+### 7.1 Hide and seek (build first)
+
+**Setup**
+- **Starting seekers:** 2, or 1 if there are fewer than 7 players.
+- Seekers are picked randomly, but **nobody is a starting seeker two rounds
+  in a row**.
+- Seekers start **in the middle of the map, frozen with a black screen for 30
+  seconds** while hiders run and hide.
+
+**Round length** (scales with players, never over 5 minutes):
+
+| Players | Length |
+|---|---|
+| 2 to 6 | 2:00 |
+| 7 to 15 | 3:00 |
+| 16 to 23 | 4:00 |
+| 24 to 30 | 5:00 |
+
+The round ends early if every hider is caught.
+
+**Seekers**
+- Carry a **squeaky hammer**. **One bonk catches a hider.** Missing puts the
+  hammer on a long cooldown, about 2 seconds **(suggested)**, so spam
+  swinging is punished.
+- Seekers have a **pink tint** so hiders can recognise them. No seeing through
+  walls.
+- In the **final minute**, every remaining hider is **pinged on seekers'
+  screens every 15 seconds**.
+
+**When a hider is bonked**
+- They **ragdoll goofily** for about 2 seconds **(suggested)**.
+- They **become a seeker** (infection) and **respawn at a seeker spawn
+  point**, giving nearby hiders a moment to escape.
+
+**Hiders**
+- **Hiding spots:** dive fully into **ball pits**, crawl **under tables**
+  (party tables with tablecloths), plus any good corner.
+- **Shove:** pushes a seeker back, and the seeker **can't swing for 1.5
+  seconds**. Cooldown 30 seconds **(suggested)**.
+- **Taunt:** plays a goofy **sound** from your spot (no ping), earns coins.
+  Cooldown 15 seconds **(suggested)**.
+- **Items spawn around the map.** Launch items:
+  - **Banana peel:** drop it; a seeker who steps on it slips and falls.
+  - **Decoy balloon:** drop it; it plays fake footsteps and giggles to
+    mislead seekers.
+- **Close call:** a seeker swings at you and misses, **or** a seeker comes
+  within a few studs of you without catching you. Earns coins.
+- Hiders always see the **timer, hiders left and seeker count**.
+
+**Winning and rewards**
+- If **any hider survives**, the survivors get the win bonus.
+- If **everyone is caught**, the **starting seekers** get the win bonus.
+- Everyone earns coins for what they did (section 12).
+
+**Results screen stats**
+- Hiders: time hidden, close calls, flashsteps, taunts, points, coins.
+- Seekers: bonks, best streak, points, coins.
+- A **Round MVP** card for the top scorer.
+
+### 7.2 Fighting (launch mode 2)
+
+- **Free for all, one-hit KO.**
+- **Win:** first to **10 KOs**, or the most KOs when the **3-minute** timer
+  ends.
+- **Weapons:** everyone starts with **boxing gloves**. Pickups around the map:
+  **squeaky hammers, dodgeballs**, and the hide and seek items (banana peel,
+  decoy balloon).
+- **Defense:** the **flashstep** is the main dodge, plus **spawn protection**
+  for 2 seconds **(suggested)** after respawning.
+- **Respawn time:** 4 seconds.
+- Third-person camera with the max zoom limit.
+
+## 8. Rule-change cards
+
+- **1 in 3 chance** that a round gets a card.
+- **Some cards are announced before the round** with the card-flip reveal.
+  **Some trigger as mid-round surprises.**
+- **Each card lists which modes it works in.**
+- The card-flip reveal design is **locked**: see
+  `docs/mockups/bonked-and-card-reveal.png` (right side). Don't change it.
+
+**Launch cards (5)**
+
+| Card | Effect | Modes | Timing |
+|---|---|---|---|
+| Low Gravity | Jump higher and fall slower; **strength is random each time** | All | Before round **(suggested)** |
+| Lights Out (**rare**) | Almost pitch black; **everyone gets a flashlight**, but turning it on gives you away | All | **Before round** |
+| Speed Rush | Everyone moves much faster | All | Mid-round surprise **(suggested)** |
+| Slippery Floors | Floors become icy and slidey | All | Mid-round surprise **(suggested)** |
+| Double Seekers | Twice as many starting seekers | Hide and seek only | Before round **(suggested)** |
+
+More cards will be designed later.
+
+## 9. Maps
+
+Three maps at launch. **Build the indoor play place first**, then the other
+two. Art style: **realistic-ish with a tiny bit of cartoon**. Every map has
+a **small version** (2 to 14 players) and a **big version** (15+ players); the
+game loads the right one at the start of each match.
+
+### 9.1 Indoor play place (main map)
+
+- Generic play place (no brand or mascot).
+- **Big version: 3 floors.**
+- Areas:
+  - **Ball pits with slides** coming down into them.
+  - **Multi-floor climbing structure:** nets, crawl tubes, rope bridges,
+    padded platforms.
+  - **Giant spiral tube slide** from the top floor into the biggest ball pit.
+  - **Toddler zone:** small soft-play area with foam blocks.
+  - **Party rooms:** tables with tablecloths, balloons, cake, a little stage.
+  - **Arcade and snack bar,** with a **prize counter** (glass cases of
+    plushies and toys).
+  - **Entrance hallway** from the office doors: cubbies, shoe racks, sign-in
+    desk.
+
+### 9.2 Trampoline park
+
+- Trampoline grid, foam pit (dive in to hide), ninja course (swinging ropes,
+  rings, balance beams), trampoline dodgeball court, bouldering climbing wall.
+
+### 9.3 Family fun center
+
+- Laser tag maze (dark, neon, great for hiding), arcade floor,
+  glow-in-the-dark mini golf.
 
 ### How code finds map pieces
 
-The map is built by hand in Studio. Code never relies on part names or
-positions; it finds pieces by **CollectionService tags** (set in Studio's
-Properties panel under Tags):
+Maps are built by hand in Studio. Code never relies on part names or
+positions; it finds pieces by **CollectionService tags**:
 
 | Tag | Used for |
 |---|---|
-| `LobbySpawn` | Where players wait between rounds |
-| `HiderSpawn` / `SeekerSpawn` | Round start positions |
-| `SeekerHoldingRoom` | Where seekers wait while hiders hide |
-| `Trampoline` | Bounce pads |
-| `Slide` | Slide paths (a part along the slide's direction) |
-| `BallPit` | Invisible submerge zones |
-| `ItemSpawn` | Where dodgeballs and other items appear |
-| `ArenaZone` | King of the Pit fighting area |
+| `EntranceSpawn` | Where players appear when the doors open |
+| `SeekerStart` | Middle-of-map spot where seekers wait blind |
+| `SeekerSpawn` | Where bonked hiders respawn as seekers |
+| `FightSpawn` | Fighting mode spawn points |
+| `ItemSpawn` | Where items and weapon pickups can appear |
+| `BallPit` | Invisible zones where players can dive and hide |
+| `HideTable` | Tables players can crawl under |
+| `Climbable` | Nets and walls you climb by walking into them |
+| `Slide` | Slide surfaces |
+| `Trampoline` | Bounce surfaces |
 | `CrawlTube` | Crawl-only tunnels |
+| `DimmableLight` | Lights that can be dimmed or flicker in the lighting variation |
 
-## Round loop
+The office also uses tags: `OfficeDoor`, `VendingMachine`, `Locker`,
+`MapVoteBoard`, `OfficeTV`, `LeaderboardBoard`.
 
-1. **Intermission (20s):** players hang out in the lobby; a vote shows 3
-   random modes.
-2. **Mode intro (5s):** big title card with the one-line rules.
-3. **Round (2 to 4 min):** the mode runs.
-4. **Results (8s):** winners, funny stats ("Most punches", "Longest hider",
-   "Fell off the most"), and points earned.
-5. Back to intermission.
+## 10. UI
 
-A round needs at least 2 players. If players leave mid-round and the mode can
-no longer continue, it ends early and nobody loses points.
+### Style
 
-## Game modes (in build order)
+A mix of the owner's other game **WYR: Disasters** and **Goofy Gorillas**:
 
-### 1. Hide and Seek (first playable mode)
+- **From WYR: Disasters:** slanted (parallelogram) panels with an offset
+  shadow behind them, heavy all-caps headers, small letter-spaced labels,
+  gold for points and for "your" row, team color blocks, big stacked banners.
+- **From Goofy Gorillas:** frosted, see-through glass panels with thin light
+  edges; minimal floating text during gameplay; an always-on scoreboard in
+  the bottom left (name, then star points and a stat); a tiny crosshair; a
+  clear middle of the screen.
+- **During play:** keep it minimal. **Big moments and menus** (results, role
+  reveals, banners, shop, lockers, vote board) use the full slanted style.
 
-- One seeker per 5 players (1 seeker for 2 to 5 players, 2 for 6 to 10).
-- Seekers wait 20 seconds in the holding room while hiders hide.
-- Seekers tag hiders by clicking them within 6 studs.
-- **Infection variant:** tagged hiders become seekers.
-- **Classic variant:** tagged hiders become spectators.
-- Hiders win if anyone survives the 3-minute timer. Seekers win if everyone is
-  caught.
-- When 1 hider is left, they glow faintly every 20 seconds so the round can end.
+### Colors
 
-### 2. Dodgeball Frenzy
-
-- Dodgeballs spawn at `ItemSpawn` points.
-- Click to throw. A hit knocks the target back and gives the thrower 100
-  points; the target respawns after 3 seconds.
-- First to 1,000 points, or the most points when the 3-minute timer ends.
-
-### 3. Glove Brawl
-
-- Everyone gets boxing gloves. Click to punch, with a short cooldown.
-- Punches deal knockback, not damage. Three quick hits in a row knock a player
-  down for 2 seconds.
-- Knocking someone into the ball pit or off a ledge scores a point.
-
-### 4. King of the Pit
-
-- A highlighted zone moves around the map every 30 seconds.
-- Earn 1 point per second while standing in it alone.
-- Gloves are on, so players can punch each other out.
-
-### Later modes (not now)
-
-- Prop Hunt (hide as playground objects).
-- Time Trials (obstacle course runs with a leaderboard).
-- After Hours (hide and seek with the lights off and flashlights).
-- Co-op zombie survival.
-
-## Items
-
-| Item | Effect |
+| Use | Color |
 |---|---|
-| Dodgeball | Throwable; knockback on hit |
-| Boxing gloves | Fast melee punches with knockback |
-| Squeaky hammer | Slow, big knockback, funny sound |
-| Banana peel | Placed on the floor; whoever steps on it slips and falls |
-| Stink bomb | Thrown; makes a green cloud that blurs the screen of anyone inside |
+| Hiders | Teal `#2EE6D6` |
+| Seekers | Hot pink `#FF3D9A` |
+| Points, highlights, "you" | Gold `#FFC83D` |
+| Panels | Dark navy glass, about 50% transparent |
+| Rarity | Common gray-blue `#9FB0D6`, Rare blue `#3EA1FF`, Epic purple `#B06BFF`, Legendary gold `#FFC83D`, Limited pink `#FF3D9A` |
+| Robux buttons | Green `#34D399` |
 
-## Progression
+Fonts: a heavy geometric font for headers and numbers (Montserrat Black or
+similar in Roblox) and a rounded font for body text (Nunito or similar).
 
-- **Party Points (PP):** earned every round (participation, wins, tags, hits).
-  Raise the player's level.
-- **Arcade Tokens:** a softer currency earned from levelling up and daily
-  play, spent at the prize counter on cosmetics.
-- Some cosmetics unlock only from achievements or hidden easter eggs on the
-  map.
-- Saved with DataStores. No paid items until the game is fun.
+### Mockups (match these)
 
-## UI style
+| File | Shows |
+|---|---|
+| `docs/mockups/hud.png` | In-round HUD (hider view): team counter and timer, round pips, active card chip, bonk feed, scoreboard, stamina and ability buttons, close-call popup, role tag, coins and level ring |
+| `docs/mockups/results.png` | Results: winner banner, hider and seeker tables, Round MVP, mode vote, coins and XP earned |
+| `docs/mockups/bonked-and-card-reveal.png` | "BONKED!" moment (left) and the locked card reveal (right) |
+| `docs/mockups/shop.png` | Shop: featured limited, giveaway, daily shop, game passes, coin packs, daily reward streak |
 
-Not generic. The theme is **"after-hours neon playground"**:
+The mockups use stand-in backgrounds; only the UI is the target.
 
-- Dark navy/near-black panels with thick rounded corners and a neon pink or
-  cyan outline glow.
-- Chunky, bubbly fonts (`FredokaOne` for body text, `LuckiestGuy` for titles).
-- Bright accent colours: hot pink `#FF3EA5`, cyan `#3EF2FF`, lime `#B6FF3E`,
-  yellow `#FFE03E`.
-- Sticker-like icons and slightly tilted title cards, like a kids' party
-  flyer.
-- Big, readable text: never below 18px, and high contrast on dark panels.
+## 11. Shop, lockers and cosmetics
 
-Screens needed: lobby HUD (level, tokens), mode vote, round timer and role
-banner ("YOU ARE THE SEEKER"), item hotbar, scoreboard, results screen,
-cosmetics menu, settings (sensitivity, music volume).
+- **Unlockables:** titles, squeaky hammer skins, flashstep afterimage colors,
+  emotes and taunt sounds. **No trails.**
+- **Shop (vending machine):**
+  - Most items cost **coins**; the cooler ones cost **Robux**.
+  - A **daily rotating shop**.
+  - **Robux exclusives** and **limited items** (limited stock and time).
+  - **Giveaways** (for example weekly, for group members who like the game).
+- **Coin packs** can be bought with Robux.
+- **Lockers** are where players equip what they own.
+- Roblox doesn't let games read a player's Robux balance, so the wallet only
+  shows coins.
 
-## Technical rules
+### Game passes (nothing pay-to-win)
 
-- **The server decides everything that matters:** rounds, roles, tags, hits,
-  points and saving. The client only sends requests ("I tried to tag this
-  player") and the server checks them: distance, cooldowns, correct role,
-  round state.
-- Rate-limit every RemoteEvent so exploiters can't spam it.
-- Each mode is its own ModuleScript with the same shape (start, stop, handle
-  player leaving), so new modes plug into the round system.
-- All tunable numbers (timers, distances, points) live in one shared config
-  module.
-- DataStore calls are wrapped in `pcall` with retries, and data is saved on
-  leave and on server shutdown.
+| Pass | What it does | Price |
+|---|---|---|
+| VIP | Gold name, VIP chat tag, VIP-only title | placeholder 299 R$ |
+| 2× Coins | Double coins from every round | placeholder 199 R$ |
+| Exclusive Pack | Special hammer skins, afterimage and emote | placeholder 399 R$ |
+| **PS Plus** | In the owner's private server: pick the map, mode, cards and timers | **200 R$** |
 
-## Milestones
+**Private servers** are available. Without PS Plus they play exactly like
+public servers.
 
-1. **Round system skeleton:** lobby, intermission, a fake mode that just waits,
-   results, back to lobby. Works with 2 players in a Studio test server.
-2. **Hide and Seek playable** on a simple test map (greybox parts).
-3. **Movement:** sprint and stamina, crouch, trampolines, slides, ball pit
-   zones.
-4. **Real map** built in Studio and tagged.
-5. **Dodgeball Frenzy** and **Glove Brawl.**
-6. **Progression and saving:** Party Points, levels, tokens, DataStore.
-7. **Cosmetics** and the prize counter.
-8. **UI polish,** sounds, music, results screen stats.
-9. **King of the Pit,** then later modes.
+All prices except PS Plus are placeholders until the owner sets them.
 
-## Open questions
+## 12. Progression
 
-- Final game name.
-- Should players be able to use their own Roblox avatars instead of the
-  mannequin, as a setting?
-- Target age group (affects voice chat and how chaotic the sounds can be).
+**Coins** are earned from:
+- Surviving (coins every 30 seconds hidden, plus a bonus for surviving the
+  round).
+- Catching hiders.
+- Taunts and juking (escaping a seeker with a shove or flashstep).
+- Finishing a round, win or lose.
+
+**Levels:**
+- XP from playing raises your level, **up to 100**.
+- Hammer skins and titles unlock at milestone levels.
+- At 100, players can **prestige** back to level 1 for a special badge and
+  title.
+
+## 13. Retention and community
+
+- **Daily rewards** with a 7-day streak (day 7 is the big one).
+- **Daily and weekly quests** (for example "Bonk 10 hiders", "Survive 3
+  rounds").
+- **Leaderboards** in the office (wins, bonks, time hidden).
+- **Seasonal events** with limited cosmetics and map decorations.
+- **Lots of Roblox badges:** milestones, prestige, secrets.
+- **Group perks:** group members get **+10% coins** and an **exclusive
+  cosmetic**.
+- **New players:** quick pop-up tips during their first few rounds.
+
+## 14. Admin
+
+**Do not build an admin system.** The owner will bring over the admin system
+from WYR: Disasters.
+
+## 15. Technical rules
+
+- **The server decides everything that matters:** rounds, roles, bonks, hits,
+  KOs, points, coins, purchases and saving. Clients only send requests ("I
+  swung at this player") and the server checks them: distance, cooldowns,
+  role, round state.
+- Rate-limit every RemoteEvent and RemoteFunction.
+- Each mode is its own ModuleScript with the same interface (start, stop,
+  player joined, player left), so new modes plug into the round system.
+- Each card is its own ModuleScript (apply, remove, allowed modes).
+- All tunable numbers live in one shared config module.
+- DataStore calls are wrapped in `pcall` with retries; data saves on leave and
+  on server shutdown.
+- Large maps and 30 players: use StreamingEnabled. Open the office doors only
+  after the map is in place and players have loaded the area around the
+  entrance (with a timeout so one slow player can't hold everyone up).
+- Map versions (small and big) are stored as separate models and the right
+  one is loaded at match start.
+
+## 16. Build order (milestones)
+
+Work one milestone at a time; the owner tests in Studio before the next.
+
+1. **Office and match loop:** office lobby, doors opening after map load,
+   5-round matches, mode vote each round, results pause, back to office,
+   40-second intermission with map vote, late joiners, AFK toggle and
+   detection. Uses a placeholder mode.
+2. **Hide and seek core** on a greybox test map: seeker picking, black
+   screen, hammer bonk, ragdoll and respawn as seeker, round length scaling,
+   final-minute pings, win conditions.
+3. **Movement:** sprint and stamina, crouch and crawl, slide, climb,
+   flashstep (once the owner's examples are in), seeker speed, camera rules.
+4. **Hider tools:** shove, taunts, items, ball pit diving, hiding under
+   tables, footsteps, tense music near seekers.
+5. **UI:** HUD, results screen, bonked banner, matching the mockups.
+6. **Fighting mode.**
+7. **Rule-change cards** and the map lighting variation.
+8. **Saving and progression:** coins, XP, levels, prestige.
+9. **Shop, lockers and cosmetics,** game passes, coin packs, PS Plus
+   private server settings.
+10. **Retention:** daily rewards, quests, leaderboards, badges, group perks,
+    tips for new players.
+11. **Mobile and console controls,** key rebinding.
+12. **Maps** (built by the owner in Studio): play place small and big,
+    trampoline park, family fun center.
+13. **Polish and launch prep.**
+
+## 17. Still to decide
+
+- Game name.
+- Flashstep afterimage details (owner will send examples).
+- Office mini activities.
+- More rule-change cards.
+- Real prices for items, passes and coin packs.
+- Details for later modes (dodgeball, prop hunt, tag, hot potato).
