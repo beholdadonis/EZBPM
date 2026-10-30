@@ -504,8 +504,12 @@ similar in Roblox) and a rounded font for body text (Nunito or similar).
 - **Notification badges:** "NEW" on the shop when the daily shop refreshes,
   and a number on Quests for quests or a daily reward ready to claim.
 - Walking up to a **vending machine** or **locker** in the office also
-  opens the shop or lockers, with an on-screen prompt (for example "E ·
-  Open shop").
+  opens the shop or lockers. The **walk-up prompt** uses the same mixed
+  style: a slanted gold key block ("E", or the controller/touch button), a
+  slanted glass panel with an icon, a big "OPEN SHOP" label and a small
+  "VENDING MACHINE" label, a hold-progress bar along the bottom, and a thin
+  line down to a glowing diamond marker on the object. See
+  `docs/mockups/menu-buttons.png`.
 
 ### Player list (top right)
 
