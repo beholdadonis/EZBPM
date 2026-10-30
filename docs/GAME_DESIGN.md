@@ -575,6 +575,7 @@ Buttons, rebuilding Roblox's own player list options:
 | `docs/mockups/menu-buttons.png` | Office view: top-left menu buttons with badges, intermission timer, and the walk-up prompt at a vending machine |
 | `docs/mockups/inventory.png` | Inventory: loadout preview, equipped slots, item grid, profile showcase picker, item details |
 | `docs/mockups/quests.png` | Quests: daily reward streak, daily and weekly quests with rerolls, level progress |
+| `docs/mockups/settings.png` | Settings: categories, sliders, keybinds per device, quick toggles, hitbox preview |
 
 The mockups use stand-in backgrounds; only the UI is the target.
 
@@ -783,6 +784,14 @@ Work one milestone at a time; the owner tests in Studio before the next.
 - Which emotes and animations.
 
 ## 18. Settings menu
+
+**Layout** (`docs/mockups/settings.png`): category list on the left (Audio,
+Controls, Graphics, Gameplay, Privacy & Streamer, Accessibility, plus Reset
+to defaults), the selected category's settings in the middle (sliders with
+values, and keybinds with PC / Console / Mobile tabs where clicking a key
+shows "Press a key..."), and quick settings on the right (audio sliders,
+Show hitbox with a small preview of the outline trailing behind you,
+performance mode, streamer mode, show my country, team colors).
 
 | Group | Settings |
 |---|---|
