@@ -345,6 +345,52 @@ game loads the right one at the start of each match.
 - Laser tag maze (dark, neon, great for hiding), arcade floor,
   glow-in-the-dark mini golf.
 
+### 9.4 Living map: interactive pieces
+
+These apply to every map that has them.
+
+**Moving ball pit balls**
+- Ball pit balls are **real moving balls**. They get pushed aside when you
+  **walk through**, **splash out** when someone jumps, dives or slides in,
+  get knocked around by **fights and items** (KOs, dodgeballs, banana
+  peels), and **roll down slides** to pile up at the bottom. Balls can spill
+  out of the pit and roll across the floor.
+- **Each player's game moves its own balls** (they are not synced between
+  players). This keeps it smooth with lots of balls and no server lag;
+  players may see slightly different ball spots. Because of that, **hiding
+  in a ball pit never depends on where the moving balls are**: diving uses
+  the ball pit zone, and the deep part of the pit is always full.
+- Performance mode (section 18) uses fewer moving balls.
+- **Cleaning robot:** a little robot vacuum slowly roams the map scooping
+  spilled balls back into the pits. It's **decoration only**: you can't ride,
+  push or hide behind it, and players pass through it **(suggested)**. When
+  you get very close, it **fades to see-through** so it never blocks your
+  view.
+- Everything **fully resets when the map reloads** for the next match.
+
+**Foam blocks (toddler zone)**
+- Players can **push them around and stand on them**, but **can't pick them
+  up or stack them**, so no building forts.
+- Foam blocks are **shared**: everyone sees them in the same place, so
+  nobody is standing on a block that's invisible to someone else. To keep
+  this cheap, there are only a limited number, about 20 per toddler zone
+  **(suggested)**.
+
+**Arcade machines**
+- Light up and play sounds when you walk past or hit them.
+
+**Balloons (party rooms)**
+- Players can **pop** them. The loud pop can give away a hider's spot.
+- Popped balloons come back when the map reloads **(suggested)**.
+
+**Doors**
+- Any player can **open and close** doors (party rooms, staff areas). Doors
+  **creak**, so moving through them makes noise.
+
+**Where players can go**
+- High spots are allowed: **arcade machines, shelves and other high areas**.
+- **Not the very top roof** of the play structure; it's blocked off.
+
 ### How code finds map pieces
 
 Maps are built by hand in Studio. Code never relies on part names or
@@ -364,6 +410,13 @@ positions; it finds pieces by **CollectionService tags**:
 | `Trampoline` | Bounce surfaces |
 | `CrawlTube` | Crawl-only tunnels |
 | `DimmableLight` | Lights that can be dimmed or flicker in the lighting variation |
+| `BallPitBalls` | Where each ball pit's moving balls start |
+| `RobotPath` | Points the cleaning robot roams between |
+| `FoamBlock` | Pushable foam blocks |
+| `ArcadeMachine` | Machines that light up and make sounds |
+| `Balloon` | Poppable balloons |
+| `Door` | Doors players can open and close |
+| `NoGo` | Blocked-off areas, like the top roof of the play structure |
 
 The office also uses tags: `OfficeDoor`, `VendingMachine`, `Locker`,
 `MapVoteBoard`, `OfficeTV`, `LeaderboardBoard`.
