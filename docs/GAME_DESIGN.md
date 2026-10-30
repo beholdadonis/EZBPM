@@ -480,7 +480,7 @@ A mix of the owner's other game **WYR: Disasters** and **Goofy Gorillas**:
 - **No colored accent lines along the top edge of panels and buttons.** The
   only exception is **timers** (the round timer and the intermission timer).
 - **During play:** keep it minimal. **Big moments and menus** (results, role
-  reveals, banners, shop, lockers, vote board) use the full slanted style.
+  reveals, banners, shop, inventory, vote board) use the full slanted style.
 
 ### Colors
 
