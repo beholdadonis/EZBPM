@@ -2,7 +2,8 @@
 
 Roblox game project. The full game design is in `docs/GAME_DESIGN.md`; read it
 before working on any gameplay feature and follow it. UI mockups to match are
-in `docs/mockups/`. Ready-made prompts for each milestone are in
+in `docs/mockups/`. Map layouts (floor plans with exact positions) are in
+`docs/maps/`. Ready-made prompts for each milestone are in
 `docs/PROMPTS.md`.
 
 ## Keep the design doc current

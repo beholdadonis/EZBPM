@@ -28,6 +28,13 @@ before moving to the next one. Milestone numbers match section 16 of
 > from section 4, including the flashstep exactly as section 6 describes.
 > Tell me how to tag climbable nets, slides and trampolines.
 
+**Greybox play place map**
+
+> Read docs/maps/play-place.md and the floor plan pictures in docs/maps/.
+> Write a script I can paste into Studio's command bar that builds the
+> greybox play place (big and small versions) in ServerStorage.Maps with
+> all the tags. Tell me exactly how to run it.
+
 **4 onward**
 
 > Build Milestone N from docs/GAME_DESIGN.md.

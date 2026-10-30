@@ -323,6 +323,9 @@ game loads the right one at the start of each match.
 
 ### 9.1 Indoor play place (main map)
 
+**Floor plans and exact layout:** `docs/maps/play-place.md` (with pictures
+of each floor in `docs/maps/`).
+
 - Generic play place (no brand or mascot).
 - **Big version: 3 floors.**
 - Areas:
