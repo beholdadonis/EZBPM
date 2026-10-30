@@ -494,6 +494,19 @@ A mix of the owner's other game **WYR: Disasters** and **Goofy Gorillas**:
 Fonts: a heavy geometric font for headers and numbers (Montserrat Black or
 similar in Roblox) and a rounded font for body text (Nunito or similar).
 
+### Menu buttons (top left)
+
+- Four buttons in a row at the **top left, right next to Roblox's own
+  buttons**: **Shop, Lockers, Quests** (quests and the daily reward) and
+  **Settings**.
+- **Shown only in the office and between rounds**; hidden during rounds so
+  the screen stays clean.
+- **Notification badges:** "NEW" on the shop when the daily shop refreshes,
+  and a number on Quests for quests or a daily reward ready to claim.
+- Walking up to a **vending machine** or **locker** in the office also
+  opens the shop or lockers, with an on-screen prompt (for example "E ·
+  Open shop").
+
 ### Player list (top right)
 
 The game has **two lists**:
@@ -540,6 +553,7 @@ Buttons, rebuilding Roblox's own player list options:
 | `docs/mockups/bonked-and-card-reveal.png` | "BONKED!" moment (left) and the locked card reveal (right) |
 | `docs/mockups/shop.png` | Shop: featured limited, giveaway, daily shop, game passes, coin packs, daily reward streak |
 | `docs/mockups/player-list.png` | Top-right player list with banners, a profile card, and the country opt-in setting |
+| `docs/mockups/menu-buttons.png` | Office view: top-left menu buttons with badges, intermission timer, and the walk-up prompt at a vending machine |
 
 The mockups use stand-in backgrounds; only the UI is the target.
 
