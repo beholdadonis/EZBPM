@@ -51,6 +51,10 @@ controls must be ready before release).
 | Hide and seek, tag (and similar) | **First person**, locked |
 | Everything else (fighting, office) | Third person, free zoom with a max distance of 20 studs **(suggested)** |
 
+**First-person view:** no arms or held items on screen, except items you
+aim with, like the **dodgeball**, which shows in your hand for better
+aiming.
+
 ## 5. Session flow
 
 ### The office (lobby)
@@ -193,6 +197,8 @@ hunt, tag, hot potato and more.
   in a row**.
 - Seekers start **in the middle of the map, frozen with a black screen for 30
   seconds** while hiders run and hide.
+  The black screen shows a big countdown, the SEEKER role banner and a
+  rotating seeker tip (for example "Listen for footsteps!").
 
 **Round length** (scales with players, never over 5 minutes):
 
@@ -218,6 +224,8 @@ The round ends early if every hider is caught.
 - They **ragdoll goofily** for about 2 seconds **(suggested)**.
 - They **become a seeker** (infection) and **respawn at a seeker spawn
   point**, giving nearby hiders a moment to escape.
+- Everyone sees it in the **bonk feed**, and players **nearby** hear the
+  squeak. Far-away players don't hear it.
 
 **Hiders**
 - **Hiding spots:** dive fully into **ball pits**, crawl **under tables**
@@ -264,7 +272,13 @@ The round ends early if every hider is caught.
   11).
 - **Defense:** the **flashstep** is the main dodge, plus **spawn protection**
   for 2 seconds **(suggested)** after respawning.
-- **Respawn time:** 4 seconds.
+- **Respawn time:** 4 seconds, spent like this:
+  1. **Kill cam (about 1 second):** a quick replay of how you got KO'd
+     **(suggested length)**.
+  2. **Watch your KO'er (3 seconds):** the camera follows whoever KO'd you.
+     You can **skip** this: the camera cuts to **where you're going to
+     spawn**, showing a **ghostly version of your avatar** there.
+  3. You spawn in.
 - Third-person camera with the max zoom limit.
 - **Play area: the whole map, plus a shrinking zone.**
   - The zone starts closing in partway through the round, from 1:30 left
