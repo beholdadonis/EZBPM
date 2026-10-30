@@ -504,12 +504,17 @@ similar in Roblox) and a rounded font for body text (Nunito or similar).
 - Each button has its **own accent color** (Shop pink, Lockers teal, Quests
   gold, Settings soft white) as a top line and icon glow. Hovering a button
   fills it with its accent color, lifts it slightly and shows a tooltip
-  (for example "3 new items in today's shop, refreshes in 14:22").
-- **Notification badges:** a gold "★ NEW" tag on the shop when the daily
-  shop refreshes, and a pink number on Quests for quests or a daily reward
-  ready to claim.
-- **Intermission timer** (top center in the office): intermission
-  countdown, when the map vote opens, and a gold progress bar.
+  (for example "Gold Squeaker is in the shop · daily shop refreshes in
+  14:22"). No rarity strips in the tooltip.
+- **Notification badges:** a gold "★ NEW" tag on the shop **only when
+  something special arrives** (a new exclusive, limited or event item), not
+  on every daily refresh. A pink number on Quests for quests or a daily
+  reward ready to claim.
+- **Intermission timer** (top center in the office): the countdown, when
+  the map vote opens, and a **gold bar showing the time left until the
+  match starts**; it drains as the countdown runs. A **white marker** on the
+  bar, labelled "MAP VOTE STARTS", shows where the map vote begins (15
+  seconds left).
 - Walking up to a **vending machine** or **locker** in the office also
   opens the shop or lockers. The **walk-up prompt** uses the same mixed
   style: a slanted gold key block ("E" with "HOLD" under it, or the
