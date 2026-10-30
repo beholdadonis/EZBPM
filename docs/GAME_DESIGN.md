@@ -106,7 +106,29 @@ The office has:
 | Crouch / crawl | Lower, slower, silent footsteps; fits through crawl tubes and under tables. |
 | Slide | Press crouch while sprinting to slide along the floor, ending in a crouch. Uses stamina. |
 | Climb | Walk into a climbable net or wall to climb it, like a ladder. Uses stamina. |
-| **Flashstep** | A quick sidestep that leaves a short-lived **afterimage** behind (you never turn invisible). Uses stamina and has a cooldown. **Details pending the owner's examples.** |
+| **Flashstep** | A quick sidestep left or right that leaves one **black afterimage** behind. Details below. |
+
+### Flashstep
+
+- **One clean dodge, one afterimage.** It never chains: each use leaves a
+  single afterimage, then goes on cooldown.
+- **Direction:** **left or right only** (a true sidestep), relative to where
+  the player is facing.
+- **Distance:** about **6 studs**.
+- **Cooldown:** **3 seconds**. Also uses stamina.
+- **How it looks:**
+  - The player snaps to the new spot almost instantly. They never turn
+    invisible.
+  - A **dark, see-through copy of the player's body**, frozen in their pose,
+    stays where they started and fades out over about 0.6 seconds
+    **(suggested)**. Default color is **black**; afterimage cosmetics change
+    the color.
+  - **The dodging player's own screen** gets a **very, very light** flash,
+    barely noticeable. Nobody else sees it.
+  - No smoke puff and no floor ripple.
+- The movement and cooldown are checked by the server (so it can't be
+  spammed or used to teleport further); the afterimage and screen flash are
+  visual only.
 
 - **Stamina** is used by sprinting, flashstep, climbing and sliding, and
   refills when not in use.
@@ -458,7 +480,7 @@ Work one milestone at a time; the owner tests in Studio before the next.
    screen, hammer bonk, ragdoll and respawn as seeker, round length scaling,
    final-minute pings, win conditions.
 3. **Movement:** sprint and stamina, crouch and crawl, slide, climb,
-   flashstep (once the owner's examples are in), seeker speed, camera rules.
+   flashstep, seeker speed, camera rules.
 4. **Hider tools:** shove, taunts, items, ball pit diving, hiding under
    tables, footsteps, tense music near seekers.
 5. **UI:** HUD, results screen, bonked banner, matching the mockups.
@@ -478,7 +500,6 @@ Work one milestone at a time; the owner tests in Studio before the next.
 ## 17. Still to decide
 
 - Game name.
-- Flashstep afterimage details (owner will send examples).
 - Office mini activities.
 - More rule-change cards.
 - Real prices for items, passes and coin packs.

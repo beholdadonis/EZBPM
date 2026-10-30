@@ -25,8 +25,8 @@ before moving to the next one. Milestone numbers match section 16 of
 **3. Movement**
 
 > Build Milestone 3: the movement kit from section 6 and the camera rules
-> from section 4. Leave the flashstep's afterimage look simple for now; I'll
-> send examples. Tell me how to tag climbable nets, slides and trampolines.
+> from section 4, including the flashstep exactly as section 6 describes.
+> Tell me how to tag climbable nets, slides and trampolines.
 
 **4 onward**
 
