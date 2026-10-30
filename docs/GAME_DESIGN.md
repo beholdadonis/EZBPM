@@ -347,6 +347,16 @@ game loads the right one at the start of each match.
     rooms. No other secret shortcuts.
 - **Size:** running straight across the **big version** takes about **35
   seconds** at sprint speed.
+- **Small version (2 to 14 players):** the same building with only the
+  **ground floor and 2nd floor** open; the 3rd floor is closed off.
+- **Getting between floors:** stairs (fast but loud footsteps), climbing
+  nets and ladders inside the play structure, and slides (down only). No
+  elevator.
+- **Ball colors:** each ball pit has **its own color theme** (for example
+  one classic red/blue/yellow pit, one neon pit) **(suggested themes)**.
+- **Closed-for-the-night details:** chairs flipped up on the snack bar
+  tables, mop buckets and wet floor signs, and a lost and found (forgotten
+  shoes, a lost teddy bear, a sock in the ball pit).
 
 ### 9.2 Trampoline park
 
