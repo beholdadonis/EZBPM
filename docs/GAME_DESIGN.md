@@ -266,6 +266,16 @@ The round ends early if every hider is caught.
   for 2 seconds **(suggested)** after respawning.
 - **Respawn time:** 4 seconds.
 - Third-person camera with the max zoom limit.
+- **Play area: the whole map, plus a shrinking zone.**
+  - The zone starts closing in partway through the round, from 1:30 left
+    **(suggested)**.
+  - **It never shrinks too much, and its final size scales with player
+    count:** about 40% of the map on a full server and 25% with few players
+    **(suggested)**.
+  - Closed-off areas fit the venue, like "closed for cleaning" caution tape
+    and shutters **(suggested)**.
+  - Standing outside the zone for 3 seconds KOs you; it counts as a death but
+    gives nobody a KO **(suggested)**.
 
 ## 8. Rule-change cards
 
@@ -458,7 +468,7 @@ The mockups use stand-in backgrounds; only the UI is the target.
 | Exclusive Pack | Special hammer skins, afterimage and emote | placeholder 399 R$ |
 | **PS Plus** | In the owner's private server: pick the map, mode, cards and timers, and add bots | **200 R$** |
 
-**Private servers** are available. Without PS Plus they play exactly like
+**Private servers** are **free**. Without PS Plus they play exactly like
 public servers.
 
 All prices except PS Plus are placeholders until the owner sets them.
@@ -526,7 +536,13 @@ All prices except PS Plus are placeholders until the owner sets them.
 
 ### Other
 
-- **Leaderboards** in the office (wins, bonks, time hidden).
+- **Leaderboards** in the office:
+  - **All-time:** wins, bonks, time hidden, KOs.
+  - **Weekly:** the same stats, reset every week so newer players have a
+    shot.
+  - **Top levels:** highest level and prestige.
+  - **Top supporters:** most Robux spent in the game.
+- **Map secrets** (hidden rooms, collectibles, puzzles): **later update**.
 - **Lots of Roblox badges:** milestones, prestige, secrets.
 - **Group perks:** group members get **+10% coins** and an **exclusive
   cosmetic**.
