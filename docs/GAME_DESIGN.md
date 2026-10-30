@@ -334,6 +334,19 @@ game loads the right one at the start of each match.
     plushies and toys).
   - **Entrance hallway** from the office doors: cubbies, shoe racks, sign-in
     desk.
+  - **Info desk:** a round staff desk in the middle of the building. This is
+    where **seekers wait blind** at the start of hide and seek
+    (`SeekerStart`).
+  - **Staff-only areas** you can hide in:
+    - **Snack bar kitchen** behind the counter (fridges, shelves, a fryer).
+    - **Storage room** (boxes, spare balls, cleaning supplies, mop
+      buckets).
+    - **Maintenance hallway**, a narrow back hallway connecting areas, with
+      pipes and fuse boxes.
+  - **Vents:** crawlable vents (crouch only) that secretly connect a few
+    rooms. No other secret shortcuts.
+- **Size:** running straight across the **big version** takes about **35
+  seconds** at sprint speed.
 
 ### 9.2 Trampoline park
 
@@ -421,6 +434,7 @@ positions; it finds pieces by **CollectionService tags**:
 | `Slide` | Slide surfaces |
 | `Trampoline` | Bounce surfaces |
 | `CrawlTube` | Crawl-only tunnels |
+| `Vent` | Crawlable vents (crouch only) |
 | `DimmableLight` | Lights that can be dimmed or flicker in the lighting variation |
 | `BallPitBalls` | Where each ball pit's moving balls start |
 | `RobotPath` | Points the cleaning robot roams between |
