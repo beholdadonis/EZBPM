@@ -354,9 +354,17 @@ of each floor in `docs/maps/`).
   seconds** at sprint speed.
 - **Small version (2 to 14 players):** the same building with only the
   **ground floor and 2nd floor** open; the 3rd floor is closed off.
-- **Getting between floors:** stairs (fast but loud footsteps), climbing
-  nets and ladders inside the play structure, and slides (down only). No
-  elevator.
+- **The play structure is the heart of the map** (like Goofy Gorillas): a
+  huge horseshoe of netted cubes in three wings (west, north, east) around
+  the info desk hub, plus a west tower. Wings link to each other and to both
+  balconies through a wobbly rope bridge and a net tunnel over the hub,
+  crawl tubes and net doors, so it's big but connected in many ways. Named
+  play areas inside: net maze, roller ramp, punching bag alley, spider web
+  nets, wobble deck, tube maze and lookouts.
+- **Getting between floors:** stairs (fast but loud footsteps), cargo nets,
+  ladders and the roller ramp inside the structure, **6 slides** (giant
+  spiral tube, wavy tube, two open slides, a drop slide, a tiny toddler
+  corkscrew) and **2 fire poles** (down only). No elevator.
 - **Ball colors:** each ball pit has **its own color theme** (for example
   one classic red/blue/yellow pit, one neon pit) **(suggested themes)**.
 - **Closed-for-the-night details:** chairs flipped up on the snack bar

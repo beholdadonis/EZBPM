@@ -1,8 +1,11 @@
-# Map spec: Indoor play place
+# Map spec: Indoor play place (v2)
 
-Draft layout for the main map. The pictures show it; this file has the exact
-numbers so Claude Code can build a greybox version (simple blocks with the
-right tags) that the owner then decorates in Studio.
+Layout for the main map, modelled on how Goofy Gorillas' play place feels:
+one **huge, connected play structure** made of netted cubes, with several
+towers joined by bridges, net tunnels and crawl tubes, lots of slides, ball
+pits built into its base, and openings on every side. The pictures show it;
+this file has the exact numbers so Claude Code can build a greybox version
+(simple blocks with the right tags) that the owner then decorates in Studio.
 
 All numbers are **(suggested)** unless the design doc says otherwise. Change
 them freely, but keep this file and the pictures in sync.
@@ -19,92 +22,128 @@ them freely, but keep this file and the pictures in sync.
   (0, 0, 0)**.
 - **X** runs west to east (0 to 560). **Z** runs north to south (0 to 360).
   In the pictures, north is up.
-- **Y** is height: ground floor 0, floor 2 at 24, floor 3 at 48, ceiling at
-  76.
-- Zones below are written as `x1–x2, z1–z2`.
+- **Y** is height: ground 0, floor 2 at 24, floor 3 at 48, ceiling at 76.
+- Zones are written as `x1–x2, z1–z2`. Points as `(x, z)`.
 - The **office doors** are on the **south wall** (Z = 360) at X 20–60.
-- Big version: everything below. **Small version** (2 to 14 players): the
-  same building with **floor 3 closed off** (netting over the ladders up from
-  floor 2 and a "closed" sign).
+- **Small version** (2 to 14 players): the same building with **floor 3
+  closed off** (netting over the ways up from floor 2 and a "closed" sign).
+
+## The play structure
+
+A **horseshoe of three wings** wrapped around the **hub** (the open court
+with the info desk). Every wing is built from **12-stud netted cubes**
+stacked into levels, with padded poles at the corners, cargo nets on the
+hub-facing sides, ladders and ramps inside, and net doors on every side.
+
+| Wing | Area | Levels | Inside |
+|---|---|---|---|
+| West wing | x 80–150, z 30–160 at ground; x 80–150, z 30–250 at level 2 (level 2 extends over the snack bar) | 3 (level 3 is the west tower, below) | Ground: **net maze** (x 86–144, z 70–140). Level 2: **spider web nets** (x 86–144, z 150–210). |
+| North wing | x 150–410, z 30–110 | 3 (tallest) | Ground: **big ball pit** (x 298–398, z 38–104) and the **roller ramp** up to level 2 (x 160–230, z 58–80). Level 2: **punching bag alley** (x 240–320, z 40–100). Level 3: **tube maze and lookout windows** (x 170–390, z 30–100). |
+| East wing | x 410–480, z 30–230 | 2 | Ground: **crawl tube tunnels** (x 416–474, z 120–190). Level 2: **wobble deck** (x 416–474, z 60–130). |
+| West tower | x 80–150, z 30–100 at level 3 | top only | **Lookout**, reached from the west wing's level 2. |
+
+**Ways into the structure from the ground** (net doors): (150, 60),
+(150, 135), (80, 120), (190, 110), (270, 110), (410, 140), (410, 70),
+(445, 230), (480, 100).
+
+### Slides and poles (all one way, down)
+
+| # | Slide | From | To |
+|---|---|---|---|
+| 1 | **Giant spiral tube slide** | North wing level 3, entrance x 350–380, z 42–72 | Big ball pit (ground) |
+| 2 | **Wavy tube slide** | East wing level 2 at (440, 232) | Small ball pit (ground), landing at (362, 276) |
+| 3–4 | **Two open slides** | West wing level 2, south edge at (95, 250) and (130, 250) | Ground at (95, 263) and (130, 263), between the snack bar and the arcade |
+| 5 | **Drop slide** (steep) | North wing level 2, south edge at (250, 110) | The hub at (250, 130) |
+| 6 | **Tiny corkscrew slide** | A low platform inside the toddler zone | Toddler zone floor |
+
+| Fire pole | From | To |
+|---|---|---|
+| North pole | North wing level 3 at (210, 92) | The hub at (210, 114), straight through level 2 |
+| East pole | East wing level 2 at (412, 238) | Ground at (412, 238) |
+
+### Crossings and links
+
+| Level | Link | Between |
+|---|---|---|
+| 2 | **Wobbly rope bridge** over the hub | West wing (150, 148) ↔ east wing (410, 148) |
+| 2 | **Net tunnel** over the hub | West wing (150, 228) ↔ east wing (410, 228) |
+| 2 | **Crawl tube** | East wing (480, 129) → straight into party room 2 (500, 129) |
+| 2 | Net doors | West balcony ↔ west wing along x = 80; east wing ↔ east balcony along x = 480 |
+| 3 | **Crawl tube** | West tower (150, 60) ↔ north wing level 3 (170, 60) |
+
+With both hub crossings you can **loop all the way around the hub at level
+2**, and every wing connects to the others and to both balconies.
 
 ## Ground floor (Y = 0)
 
 | Zone | Area | Notes | Tags |
 |---|---|---|---|
-| Maintenance hallway | x 5–555, z 5–23 | Staff only, narrow, pipes and fuse boxes. Door to the storage room at (500, 23). | `Door` |
-| Kitchen | x 5–55, z 140–250 | Staff only, behind the snack bar. Door to the snack bar on its east wall at (55, 200). Vent to the maintenance hallway (below). | `Door`, `Vent` |
-| Snack bar counter | x 58–66, z 165–250 | Counter you can hide behind. | |
-| Snack bar seating | x 70–220, z 165–250 | About 8 tables with tablecloths, chairs flipped up on top. | `HideTable` |
-| Play structure, level 1 | x 140–420, z 30–150 | Ground level of the climbing structure: cargo nets up, crawl tubes. | `Climbable`, `CrawlTube` |
-| Big ball pit | x 302–406, z 46–134 | Inside the structure's ground level, floor sunk 4 studs. The giant spiral slide lands here. | `BallPit`, `BallPitBalls` |
-| Storage room | x 440–555, z 30–120 | Staff only: boxes, spare balls, mop buckets. Door to the hall at (490, 120). | `Door` |
-| Entrance hall | x 20–60, z 270–358 | From the office doors: cubbies, shoe racks, sign-in desk. Opens into the hall at (40, 270). | `EntranceSpawn` |
-| Arcade | x 70–235, z 270–350 | Rows of arcade machines. | `ArcadeMachine` |
-| Prize counter | x 238–272, z 270–350 | Glass cases of plushies and toys. | |
-| Small ball pit | x 290–380, z 285–345 | Near the entrance. | `BallPit`, `BallPitBalls` |
-| Toddler zone | x 410–555, z 250–350 | Soft play with low padded walls (3 studs) and about 20 foam blocks. | `FoamBlock` |
-| West stairs | x 75–107, z 120–154 | Up to the west balcony. | |
-| East stairs | x 400–436, z 196–240 | Up to the east balcony. | |
-| Atrium | the open middle | Open floor around the info desk. | |
-| Info desk | circle, center (280, 205), radius 12 | Round staff desk in the middle. Seekers wait here blind. | `SeekerStart` |
+| Maintenance hallway | x 5–555, z 5–23 | Staff only, runs behind everything. Door to storage at (500, 23). | `Door` |
+| Kitchen | x 5–55, z 140–250 | Staff only. Door to the snack bar at (55, 205). | `Door` |
+| West stairs | x 15–55, z 100–134 | Up to the west balcony. | |
+| Snack bar counter | x 58–66, z 165–250 | Hide behind it. | |
+| Snack bar seating | x 68–150, z 165–250 | Tables with tablecloths, chairs flipped up, **under the west wing's level 2**. | `HideTable` |
+| The hub | x 150–410, z 110–260 | Open court in the middle; the rope bridge and net tunnel pass overhead. | |
+| Info desk | circle, center (280, 180), radius 12 | Seekers wait here blind. | `SeekerStart` |
+| Storage | x 490–555, z 30–120 | Staff only. Door to the floor at (520, 120). | `Door` |
+| East stairs | x 495–535, z 190–235 | Up to the east balcony. | |
+| Entrance hall | x 20–60, z 270–358 | Cubbies, shoe racks, sign-in desk. | `EntranceSpawn` |
+| Arcade | x 70–235, z 270–350 | Rows of machines. | `ArcadeMachine` |
+| Prize counter | x 238–272, z 270–350 | Glass cases of plushies. | |
+| Small ball pit | x 290–390, z 275–345 | The wavy tube slide lands here. | `BallPit`, `BallPitBalls` |
+| Toddler zone | x 410–555, z 260–350 | Soft play, about 20 foam blocks, tiny corkscrew slide. | `FoamBlock` |
+
+The big ball pit (in the north wing) has its floor sunk 4 studs. Tags:
+`BallPit`, `BallPitBalls`.
+
+**Vents** (`Vent`, crouch only): kitchen (30, 140) ↔ maintenance hallway
+(30, 23); storage (540, 120) ↔ toddler zone (540, 260).
 
 **Spawn points**
 
 | Tag | Positions (x, z) |
 |---|---|
-| `EntranceSpawn` | Around (40, 340) in the entrance hall |
-| `SeekerSpawn` | (250, 172), (310, 172), (250, 246), (310, 246) |
-| `ItemSpawn` | (150, 210), (360, 240), (480, 140), (200, 300) |
-| `FightSpawn` | (110, 230), (460, 230), (340, 320), (220, 160) |
+| `EntranceSpawn` | Around (40, 340) |
+| `SeekerSpawn` | (240, 150), (320, 150), (240, 215), (320, 215) |
+| `ItemSpawn` | (110, 205), (285, 245), (455, 250), (200, 300), (520, 160) |
+| `FightSpawn` | (115, 50), (380, 150), (340, 320), (500, 300) |
 
-**Vents (crouch only, `Vent`)**
-- Kitchen north wall (30, 140) to the maintenance hallway (30, 23), inside
-  the west wall.
-- Storage room (500, 120) to the toddler zone (500, 250), inside the east
-  side.
-
-**Slides:** two open slides from the south edge of structure level 2 land on
-the ground at about (200, 165) and (262, 165).
-
-**Cleaning robot** (`RobotPath` points): (240, 160) → (330, 160) →
-(400, 260) → (380, 350) → (280, 270) → (200, 260) → back to start.
+**Cleaning robot** (`RobotPath`): loops around the hub and between both
+ball pits: (220, 250) → (400, 250) → (400, 270) → (290, 270) → (220, 250).
 
 ## Floor 2 (Y = 24)
 
 | Zone | Area | Notes | Tags |
 |---|---|---|---|
-| Play structure, level 2 | x 140–420, z 30–150 | Platforms, cargo nets, crawl tubes. | `Climbable`, `CrawlTube` |
-| West balcony | x 0–120, z 110–260 | Overlooks the snack bar. Lost and found. Railing on the open sides. | |
-| East balcony | x 420–560, z 20–250 | Walkway at x 420–440 in front of the party rooms. Railing on the open sides. | |
-| Party room 1 | x 440–552, z 28–90 | Little stage, balloons. Door at (440, 59). | `Door`, `Balloon` |
-| Party room 2 | x 440–552, z 98–160 | Tables with tablecloths, cake. Door at (440, 129). | `Door`, `HideTable` |
-| Party room 3 | x 440–552, z 168–230 | Tables with tablecloths, presents. Door at (440, 199). | `Door`, `HideTable` |
-| Open to below | everything else | The atrium, snack bar, arcade, small ball pit and toddler zone are open up to the ceiling. | |
+| West balcony | x 0–80, z 100–260 | Over the kitchen. Lost and found. Railing on the open sides. | |
+| West wing, level 2 | x 80–150, z 30–250 | Spider web nets. Two open slides from its south edge. | `Climbable` |
+| North wing, level 2 | x 150–410, z 30–110 | Punching bag alley, roller ramp top, drop slide. | `Climbable` |
+| East wing, level 2 | x 410–480, z 30–230 | Wobble deck, wavy tube slide, east pole. | `Climbable` |
+| East balcony | x 480–560, z 20–250 | Walkway at x 480–500 in front of the party rooms. | |
+| Party room 1 | x 500–552, z 28–90 | Stage, balloons. Door at (500, 59). | `Door`, `Balloon` |
+| Party room 2 | x 500–552, z 98–160 | Tables, cake. Door at (500, 150); the crawl tube from the east wing enters at (500, 129). | `Door`, `HideTable` |
+| Party room 3 | x 500–552, z 168–230 | Tables, gifts. Door at (500, 199). | `Door`, `HideTable` |
 
-- **Rope bridges:** west balcony to the structure at z 128 (x 120–140);
-  structure to party room 1's door at z 60 (x 420–440).
-- **Vents:** party room 1 ↔ 2 at (496, 90–98), and party room 2 ↔ 3 at
-  (496, 160–168).
-- **Slides:** the two open slides start here at (200, 150) and (262, 150).
-- `ItemSpawn`: (60, 200), (496, 60), (280, 90). `FightSpawn`: (496, 200),
-  (180, 60), (60, 150).
+- **Vents:** party rooms 1 ↔ 2 at (526, 90–98) and 2 ↔ 3 at (526, 160–168).
+- `ItemSpawn`: (40, 200), (280, 70), (445, 100), (526, 60).
+- `FightSpawn`: (115, 110), (445, 190), (526, 200).
 
 ## Floor 3 (Y = 48), big version only
 
 | Zone | Area | Notes | Tags |
 |---|---|---|---|
-| Play structure, level 3 | x 180–380, z 40–140 | The top: tube maze, net walkway, lookout windows. Reached only by nets and ladders from level 2. | `Climbable`, `CrawlTube` |
-| Spiral slide entrance | x 350–380, z 50–80 | The giant tube slide spirals down through the structure into the big ball pit. | `Slide` |
-| Roof of the structure | x 140–420, z 20–160, above Y 70 | Blocked. | `NoGo` |
+| West tower, level 3 | x 80–150, z 30–100 | Lookout. | `Climbable` |
+| North wing, level 3 | x 170–390, z 30–100 | Tube maze, lookout windows, the north pole down. | `Climbable`, `CrawlTube` |
+| Spiral slide entrance | x 350–380, z 42–72 | Down into the big ball pit. | `Slide` |
+| Roofs | x 76–394, z 22–108, above Y 70 | Blocked. | `NoGo` |
 
-- `ItemSpawn`: (230, 90). `FightSpawn`: (300, 110).
+- `ItemSpawn`: (115, 75). `FightSpawn`: (260, 75).
 
 ## Everywhere
 
-- **Walls** 76 studs tall. **South wall windows** look out on a night
-  parking lot.
-- **Lights** are tagged `DimmableLight` in every area, for the lighting
-  variation.
+- **Walls** 76 studs tall. **South wall windows** show a night parking lot.
+- **Lights** tagged `DimmableLight` in every area, for the lighting
+  variation. Hanging warehouse lamps and roof trusses above the structure.
 - Closed-for-the-night details: chairs flipped up on tables, mop buckets and
   wet floor signs (decoration only), a lost and found.
 - Each ball pit has its own color theme.
@@ -113,8 +152,10 @@ the ground at about (200, 165) and (262, 165).
 
 1. Write a script the owner pastes into Studio's **command bar** (or a
    one-off plugin) that builds the map from this file as simple, anchored
-   parts: floors, walls, the structure's levels, ramps for stairs and slides,
-   and invisible zone parts for ball pits, the info desk and spawns.
+   parts: floors, walls, the structure wings as stacked 12-stud cubes with
+   net walls, ramps for stairs and slides (slide paths can be simple
+   ramps or curved segments for now), bridges, tubes, and invisible zone
+   parts for ball pits, the info desk and spawns.
 2. Put everything in one model, `PlayPlace_Big`, inside `ServerStorage.Maps`,
    with every part tagged as listed above. Then make `PlayPlace_Small` by
    copying it and closing off floor 3.
