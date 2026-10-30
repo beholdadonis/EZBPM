@@ -725,7 +725,7 @@ Work one milestone at a time; the owner tests in Studio before the next.
    40-second intermission with map vote, late joiners, AFK toggle and
    detection. Uses a placeholder mode.
 2. **Hide and seek core** on a greybox test map: seeker picking, black
-   screen, hammer bonk, ragdoll and respawn as seeker, round length scaling,
+   screen, hammer bonk with the hit system from section 19, ragdoll and respawn as seeker, round length scaling,
    final-minute pings, win conditions.
 3. **Movement:** sprint and stamina, crouch and crawl, slide, climb,
    flashstep, seeker speed, camera rules.
@@ -769,3 +769,51 @@ Work one milestone at a time; the owner tests in Studio before the next.
 | Streamer mode | Hides player names and country flags on screen |
 | Accessibility | **Colorblind-friendly team colors** (an alternative to teal and pink) |
 | **Show hitbox** | Draws an outline of **your torso hitbox where the server thinks you are**, so players can tell when the server is lagging (if the outline trails behind you, the server is slow) |
+
+## 19. Hitboxes and lag
+
+The goal: **hits feel instant on low ping and stay fair and playable on high
+ping (even 500 ms).** Used for hammer bonks, punches, dodgeballs and
+fighting pickups.
+
+### Hitbox shape
+
+- **One slightly generous box around the R6 body**, about 10% bigger than
+  the body **(suggested)**, so small lag still feels fair.
+- **Accessories never count.** Hats, wings and hair are visual only.
+- **Crouching shrinks the box** (lower height, about 60% **(suggested)**).
+- **Ball pit diving doesn't change the box.** A seeker who guesses right can
+  bonk into the pit.
+- **Flashstep dodge window:** for **0.25 seconds** from the start of a
+  flashstep, the player can't be hit.
+
+### Reach
+
+- **Squeaky hammer: 5 studs,** in front of the attacker, about a 90° swing
+  arc **(suggested)**. Measured to the edge of the target's hitbox.
+- Boxing gloves and other melee items: set per item **(suggested
+  defaults)**.
+
+### How a hit is decided
+
+1. **Instant feedback for the attacker:** the swing, squeak and hit flash
+   play immediately on the attacker's screen, so it never feels delayed.
+2. **The server rewinds time:** the server keeps a short history (the last
+   1 second) of every player's position. When a hit request arrives, it
+   rewinds the target to **where they were on the attacker's screen**,
+   based on the attacker's ping, and checks the hit there.
+3. **Rewind limit: 300 ms.** The server never rewinds further than this, so
+   players being hit are protected from getting hit long after they escaped.
+   Players above about 300 ping can still play; they just need to aim
+   slightly ahead.
+4. **Server checks every hit** at the rewound moment: within range, no wall
+   in between, cooldown ready, attacker has the right role and round state,
+   and the target isn't in a flashstep dodge window.
+5. **Results only happen after the server confirms:** ragdolls, KOs,
+   becoming a seeker and points. If the server rejects a hit (rare), nothing
+   happens.
+
+### Related setting
+
+**Show hitbox** (section 18) draws your box where the server sees you, so
+players can see lag for themselves.
