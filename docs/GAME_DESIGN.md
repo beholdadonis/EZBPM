@@ -66,7 +66,8 @@ The office has:
 - **Map vote board.**
 - **A TV showing the current round live**, for late joiners and AFK players.
 - **Leaderboards** (see section 13).
-- Space to hang out. **Mini activities: decided later.**
+- Space to hang out. **No mini activities for now**; they come later, once
+  the office layout has enough room. Leave open space for them.
 
 ### Match loop
 
@@ -473,17 +474,59 @@ All prices except PS Plus are placeholders until the owner sets them.
 
 **Levels:**
 - XP from playing raises your level, **up to 100**.
-- Hammer skins and titles unlock at milestone levels.
 - At 100, players can **prestige** back to level 1 for a special badge and
   title.
 
+**Level rewards** (the levels are **(suggested)**):
+
+| Reward | When |
+|---|---|
+| Coins | Every level, with bigger amounts at every 10th level |
+| Titles | Every 10 levels (Rookie, Sneaky, Pro Hider...) |
+| Banners | Levels 15, 35, 60 and 90 |
+| Hammer skins | Levels 25, 50, 75 and 100 |
+
 ## 13. Retention and community
 
-- **Daily rewards** with a 7-day streak (day 7 is the big one).
-- **Daily and weekly quests** (for example "Bonk 10 hiders", "Survive 3
-  rounds").
+### Quests
+
+- **3 daily + 4 weekly** quests at a time.
+- **Rewards:** coins and XP (weeklies give more).
+- **Rerolls:** every player gets **1 free reroll per week**. Extra rerolls
+  cost Robux, about 25 R$ **(suggested)**.
+- **Keep them tame and doable.** No near-impossible ones like "get a 3-bonk
+  streak" or "bonk someone in the final minute". Examples:
+  - **Play:** play 5 rounds, finish 2 matches, play on each map.
+  - **Hider:** survive 3 rounds, run 5,000 studs **(suggested amount)**.
+  - **Seeker:** bonk 10 hiders.
+  - **Fighting:** get 15 KOs, win a fighting round.
+
+### Daily rewards
+
+- **7-day streak:** coins on days 1 to 6, growing each day; **day 7 gives a
+  free crate**.
+- **Day 7 crate:** a random cosmetic from **common up to epic** (mostly
+  common and rare, a small chance of epic). Duplicates turn into coins. The
+  crate is free; if crates are ever sold for Robux, Roblox requires showing
+  the odds before purchase.
+- **Missing a day resets the streak to day 1**, but players can restore it
+  for Robux, about 49 R$ **(suggested)**.
+
+### Events
+
+- **Launch event** (the first event), similar to Valorant's Champions
+  bundles:
+  - A **paid launch bundle**, on sale for **1 month** after release: a
+    launch **hammer skin**, matching **KO effect and bonk effect**, a launch
+    **afterimage color**, a **banner** and a **title**. Price to be decided.
+  - **Free for everyone who plays in launch week:** a **launch badge and
+    title**.
+- **Winter / holidays:** only if the game releases close to December.
+- Later: **seasonal events** with limited cosmetics and map decorations.
+
+### Other
+
 - **Leaderboards** in the office (wins, bonks, time hidden).
-- **Seasonal events** with limited cosmetics and map decorations.
 - **Lots of Roblox badges:** milestones, prestige, secrets.
 - **Group perks:** group members get **+10% coins** and an **exclusive
   cosmetic**.
@@ -551,7 +594,7 @@ Work one milestone at a time; the owner tests in Studio before the next.
 - Game name (parked for now).
 - Office mini activities.
 - More rule-change cards.
-- Real prices for items, passes and coin packs.
+- Real prices for items, passes, coin packs and the launch bundle.
 - Details for later modes (dodgeball, prop hunt, tag, hot potato).
 - Which emotes and animations.
 
