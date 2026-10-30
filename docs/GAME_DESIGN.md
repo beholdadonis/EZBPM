@@ -501,11 +501,19 @@ similar in Roblox) and a rounded font for body text (Nunito or similar).
   **Settings**.
 - **Shown only in the office and between rounds**; hidden during rounds so
   the screen stays clean.
-- **Notification badges:** "NEW" on the shop when the daily shop refreshes,
-  and a number on Quests for quests or a daily reward ready to claim.
+- Each button has its **own accent color** (Shop pink, Lockers teal, Quests
+  gold, Settings soft white) as a top line and icon glow. Hovering a button
+  fills it with its accent color, lifts it slightly and shows a tooltip
+  (for example "3 new items in today's shop, refreshes in 14:22").
+- **Notification badges:** a gold "★ NEW" tag on the shop when the daily
+  shop refreshes, and a pink number on Quests for quests or a daily reward
+  ready to claim.
+- **Intermission timer** (top center in the office): intermission
+  countdown, when the map vote opens, and a gold progress bar.
 - Walking up to a **vending machine** or **locker** in the office also
   opens the shop or lockers. The **walk-up prompt** uses the same mixed
-  style: a slanted gold key block ("E", or the controller/touch button), a
+  style: a slanted gold key block ("E" with "HOLD" under it, or the
+  controller/touch button), a
   slanted glass panel with an icon, a big "OPEN SHOP" label and a small
   "VENDING MACHINE" label, a hold-progress bar along the bottom, and a thin
   line down to a glowing diamond marker on the object. See
