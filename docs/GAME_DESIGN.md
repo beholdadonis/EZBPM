@@ -574,6 +574,7 @@ Buttons, rebuilding Roblox's own player list options:
 | `docs/mockups/player-list.png` | Top-right player list with banners, a profile card, and the country opt-in setting |
 | `docs/mockups/menu-buttons.png` | Office view: top-left menu buttons with badges, intermission timer, and the walk-up prompt at a vending machine |
 | `docs/mockups/inventory.png` | Inventory: loadout preview, equipped slots, item grid, profile showcase picker, item details |
+| `docs/mockups/quests.png` | Quests: daily reward streak, daily and weekly quests with rerolls, level progress |
 
 The mockups use stand-in backgrounds; only the UI is the target.
 
@@ -669,6 +670,14 @@ All prices except PS Plus are placeholders until the owner sets them.
   - **Hider:** survive 3 rounds, run 5,000 studs **(suggested amount)**.
   - **Seeker:** bonk 10 hiders.
   - **Fighting:** get 15 KOs, win a fighting round.
+
+**Quests screen** (`docs/mockups/quests.png`): the 7-day daily reward row
+at the top (claimed days ticked, today highlighted with a Claim button, day
+7 crate), daily quests on the left and weekly quests on the right (progress
+bars, coin and XP rewards, a Claim button when complete, a reroll button on
+unfinished quests, the free-reroll and reset timers), and a level progress
+strip along the bottom showing XP and the next level reward. The R$ streak
+restore button only appears after a missed day.
 
 ### Daily rewards
 
