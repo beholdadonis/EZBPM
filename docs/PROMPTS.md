@@ -35,6 +35,19 @@ before moving to the next one. Milestone numbers match section 16 of
 > greybox play place (big and small versions) in ServerStorage.Maps with
 > all the tags. Tell me exactly how to run it.
 
+**Dress up the play place**
+
+> Read docs/maps/play-place-look.md and docs/reference/goofy-gorillas.md.
+> Run `bash docs/reference/get-goofy-gorillas-screenshots.sh` and look at
+> every picture it downloads, for the feel only (don't copy anything).
+> Then turn the greybox play place into the real look, following the
+> "Order to build it" steps. Do one step at a time and stop after each so
+> I can look around in Studio. Keep every tag.
+
+If you use Claude on claude.ai (it can't run the script there), run it
+yourself in this folder (Git Bash on Windows, Terminal on Mac) and drag the
+pictures from `docs/reference/goofy-gorillas/` into the chat.
+
 **4 onward**
 
 > Build Milestone N from docs/GAME_DESIGN.md.

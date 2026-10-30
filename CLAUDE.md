@@ -3,8 +3,12 @@
 Roblox game project. The full game design is in `docs/GAME_DESIGN.md`; read it
 before working on any gameplay feature and follow it. UI mockups to match are
 in `docs/mockups/`. Map layouts (floor plans with exact positions) are in
-`docs/maps/`. Ready-made prompts for each milestone are in
-`docs/PROMPTS.md`.
+`docs/maps/`, with a `*-look.md` file per map describing how it should look.
+Reference screenshots of Goofy Gorillas (the game this is inspired by) are
+listed in `docs/reference/goofy-gorillas.md`; download them with
+`bash docs/reference/get-goofy-gorillas-screenshots.sh` and use them for the
+feel only, never to copy anything. Ready-made prompts for each milestone are
+in `docs/PROMPTS.md`.
 
 ## Keep the design doc current
 

@@ -5,7 +5,10 @@ one **huge, connected play structure** made of netted cubes, with several
 towers joined by bridges, net tunnels and crawl tubes, lots of slides, ball
 pits built into its base, and openings on every side. The pictures show it;
 this file has the exact numbers so Claude Code can build a greybox version
-(simple blocks with the right tags) that the owner then decorates in Studio.
+(simple blocks with the right tags). How it should look when it's dressed
+up (colors, materials, lighting, props) is in `play-place-look.md`, with
+Goofy Gorillas reference screenshots listed in
+`docs/reference/goofy-gorillas.md`.
 
 All numbers are **(suggested)** unless the design doc says otherwise. Change
 them freely, but keep this file and the pictures in sync.

@@ -324,8 +324,19 @@ game loads the right one at the start of each match.
 ### 9.1 Indoor play place (main map)
 
 **Floor plans and exact layout:** `docs/maps/play-place.md` (with pictures
-of each floor in `docs/maps/`).
+of each floor in `docs/maps/`). **How it looks** (colors, materials,
+lighting, props per area): `docs/maps/play-place-look.md`, with Goofy
+Gorillas reference screenshots listed in `docs/reference/goofy-gorillas.md`
+(for the feel only, nothing copied).
 
+- **Look:** a real play place after closing time. One giant colorful
+  structure fills a dark warehouse-style building lit by warm overhead lamps
+  and colored uplights. Each wing has **its own color** (west orange, north
+  blue, east lime) so players can call out where someone is
+  **(suggested)**.
+- **Team colors stay off the map:** hot pink and teal are only small
+  accents on maps, never big surfaces or lights, so a seeker's pink tint
+  always stands out **(suggested)**.
 - Generic play place (no brand or mascot).
 - **Big version: 3 floors.**
 - Areas:
