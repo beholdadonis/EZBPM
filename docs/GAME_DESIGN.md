@@ -67,7 +67,7 @@ experiences set in private spaces like bathrooms to ID-verified 17+ users.)
 The office has:
 - **Big double doors on one wall**, with the countdown above them.
 - **Vending machines:** walk up to one to open the **shop**.
-- **Lockers:** walk up to one to **equip** titles, hammer skins, afterimage
+- **Lockers:** walk up to one to open your **Inventory** and **equip** titles, hammer skins, afterimage
   colors, emotes and taunts.
 - **Map vote board.**
 - **A TV showing the current round live**, for late joiners and AFK players.
@@ -477,6 +477,8 @@ A mix of the owner's other game **WYR: Disasters** and **Goofy Gorillas**:
   edges; minimal floating text during gameplay; an always-on scoreboard in
   the bottom left (name, then star points and a stat); a tiny crosshair; a
   clear middle of the screen.
+- **No colored accent lines along the top edge of panels and buttons.** The
+  only exception is **timers** (the round timer and the intermission timer).
 - **During play:** keep it minimal. **Big moments and menus** (results, role
   reveals, banners, shop, lockers, vote board) use the full slanted style.
 
@@ -497,12 +499,12 @@ similar in Roblox) and a rounded font for body text (Nunito or similar).
 ### Menu buttons (top left)
 
 - Four buttons in a row at the **top left, right next to Roblox's own
-  buttons**: **Shop, Lockers, Quests** (quests and the daily reward) and
+  buttons**: **Shop, Inventory, Quests** (quests and the daily reward) and
   **Settings**.
 - **Shown only in the office and between rounds**; hidden during rounds so
   the screen stays clean.
-- Each button has its **own accent color** (Shop pink, Lockers teal, Quests
-  gold, Settings soft white) as a top line and icon glow. Hovering a button
+- Each button has its **own accent color** (Shop pink, Inventory teal,
+  Quests gold, Settings soft white) as an icon glow. Hovering a button
   fills it with its accent color, lifts it slightly and shows a tooltip
   (for example "Gold Squeaker is in the shop · daily shop refreshes in
   14:22"). No rarity strips in the tooltip.
@@ -516,7 +518,7 @@ similar in Roblox) and a rounded font for body text (Nunito or similar).
   bar, labelled "MAP VOTE STARTS", shows where the map vote begins (15
   seconds left).
 - Walking up to a **vending machine** or **locker** in the office also
-  opens the shop or lockers. The **walk-up prompt** uses the same mixed
+  opens the shop or the inventory. The **walk-up prompt** uses the same mixed
   style: a slanted gold key block ("E" with "HOLD" under it, or the
   controller/touch button), a
   slanted glass panel with an icon, a big "OPEN SHOP" label and a small
@@ -574,7 +576,7 @@ Buttons, rebuilding Roblox's own player list options:
 
 The mockups use stand-in backgrounds; only the UI is the target.
 
-## 11. Shop, lockers and cosmetics
+## 11. Shop, inventory and cosmetics
 
 - **Unlockables:** titles, squeaky hammer skins, flashstep afterimage colors,
   emotes and taunt sounds, **player list banners**, **KO effects** (fighting;
@@ -596,7 +598,8 @@ The mockups use stand-in backgrounds; only the UI is the target.
   - **Robux exclusives** and **limited items** (limited stock and time).
   - **Giveaways** (for example weekly, for group members who like the game).
 - **Coin packs** can be bought with Robux.
-- **Lockers** are where players equip what they own.
+- **Inventory** (menu button, or the lockers in the office) is where
+  players equip what they own.
 - Roblox doesn't let games read a player's Robux balance, so the wallet only
   shows coins.
 
@@ -734,7 +737,7 @@ Work one milestone at a time; the owner tests in Studio before the next.
    screen, and reduced rewards with bots.
 8. **Rule-change cards** and the map lighting variation.
 9. **Saving and progression:** coins, XP, levels, prestige.
-10. **Shop, lockers and cosmetics** (including banners, KO effects and bonk
+10. **Shop, inventory and cosmetics** (including banners, KO effects and bonk
     effects), game passes, coin packs, PS Plus private server settings
     (including bots), and the **top-right player list with profile cards**.
 11. **Retention:** daily rewards, quests, leaderboards, badges, group perks,
