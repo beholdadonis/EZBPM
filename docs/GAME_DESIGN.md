@@ -323,11 +323,10 @@ game loads the right one at the start of each match.
 
 ### 9.1 Indoor play place (main map)
 
-**Floor plans and exact layout:** `docs/maps/play-place.md` (with pictures
-of each floor in `docs/maps/`). **How it looks** (colors, materials,
-lighting, props per area): `docs/maps/play-place-look.md`, with Goofy
-Gorillas reference screenshots listed in `docs/reference/goofy-gorillas.md`
-(for the feel only, nothing copied).
+**Exact layout, look and where every prop goes:** `GG.md` Part 3 (floor
+plan pictures in `docs/maps/`), with Goofy Gorillas reference screenshots
+listed in `docs/reference/goofy-gorillas.md` (for the feel only, nothing
+copied).
 
 - **Look:** a real play place after closing time. One giant colorful
   structure fills a dark warehouse-style building lit by warm overhead lamps
@@ -599,7 +598,9 @@ Buttons, rebuilding Roblox's own player list options:
 | `docs/mockups/quests.png` | Quests: daily reward streak, daily and weekly quests with rerolls, level progress |
 | `docs/mockups/settings.png` | Settings: categories, sliders, keybinds per device, quick toggles, hitbox preview |
 
-The mockups use stand-in backgrounds; only the UI is the target.
+The mockups use stand-in backgrounds; only the UI is the target. Normal
+Claude builds the screens in Studio (`GG.md` Part 6, with the exact names
+code uses); Claude Code makes them work.
 
 ## 11. Shop, inventory and cosmetics
 
@@ -781,7 +782,9 @@ Work one milestone at a time; the owner tests in Studio before the next.
    flashstep, seeker speed, camera rules.
 4. **Hider tools:** shove, taunts, items, ball pit diving, hiding under
    tables, footsteps, tense music near seekers.
-5. **UI:** HUD, results screen, bonked banner, matching the mockups.
+5. **UI:** make the HUD, results screen, bonked banner and card reveal work.
+   Normal Claude builds the layouts in Studio first (`GG.md` Part 6),
+   matching the mockups.
 6. **Fighting mode.**
 7. **Bots** for hide and seek and fighting, the "waiting for players"
    screen, and reduced rewards with bots.
@@ -794,8 +797,8 @@ Work one milestone at a time; the owner tests in Studio before the next.
     tips for new players.
 12. **Settings menu** (section 18), **mobile and console controls**, key
     rebinding.
-13. **Maps** (built by the owner in Studio): play place small and big,
-    trampoline park, family fun center.
+13. **Maps** (built in Studio by normal Claude, `GG.md` Part 3): play place
+    small and big, trampoline park, family fun center.
 14. **Polish and launch prep.**
 15. **Later update:** emotes and the emote wheel.
 

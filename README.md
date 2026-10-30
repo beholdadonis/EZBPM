@@ -4,9 +4,10 @@ A Roblox project synced into Roblox Studio with [Rojo](https://rojo.space).
 
 - Game design: [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md)
 - UI mockups: [docs/mockups/](docs/mockups/)
-- Map floor plans and looks: [docs/maps/](docs/maps/)
+- Build guide for both Claudes (map layout, props, models, UI names): [GG.md](GG.md)
+- Map floor plans: [docs/maps/](docs/maps/)
 - Goofy Gorillas reference screenshots: [docs/reference/goofy-gorillas.md](docs/reference/goofy-gorillas.md)
-- Prompts for building it with Claude Code: [docs/PROMPTS.md](docs/PROMPTS.md)
+- Prompts for both Claudes: [docs/PROMPTS.md](docs/PROMPTS.md)
 - Project rules Claude Code reads automatically: [CLAUDE.md](CLAUDE.md)
 
 ## Layout

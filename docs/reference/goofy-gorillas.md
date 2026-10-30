@@ -9,8 +9,8 @@ dark building, colored light, cluttered floor.
 **Use them for the feel only. Never copy anything.** Our game is fully
 original (design doc section 1). Don't copy their logos, wall signs and
 slogans (you'll see their brand name on walls), their mascot, their
-characters or their exact layout. Our layout is `docs/maps/play-place.md`
-and our look is `docs/maps/play-place-look.md`.
+characters or their exact layout. Our layout and look are in `GG.md`
+Part 3.
 
 ## Getting the pictures
 
