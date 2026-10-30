@@ -75,7 +75,8 @@ The office has:
 2. Players walk through into the map's **entrance hallway** (cubbies, shoe
    racks, sign-in desk), which opens into the play area.
 3. **A match is 5 rounds on the same map.** Before each round, players
-   **vote on the mode** (only modes, never the map, between rounds).
+   **vote on the mode** (only modes, never the map, between rounds). A tied
+   vote is broken by a random pick between the tied modes.
 4. **Between rounds 1 to 5, players stay on the map.** The results screen and
    the next mode vote pop up there (about 15 to 20 seconds total
    **(suggested)**), then the next round starts.
@@ -97,6 +98,35 @@ The office has:
 - **AFK:** both a **manual AFK toggle** and **auto-detection** after 60
   seconds without input **(suggested)**. AFK players skip rounds and stay in
   the office.
+
+### Bots
+
+Bots let people play when servers are small.
+
+**When bots appear**
+- **Public servers:** when there are fewer than 4 real players
+  **(suggested)**, bots join so every round has a handful of them, about 4
+  **(suggested)**. More is chaos. They leave as real players join.
+- **Private servers:** **no bots** unless the owner has **PS Plus** and turns
+  them on. Without bots, the server shows **"Waiting for 1 more player to
+  join"** until there are 2 real players (so two friends can play alone).
+
+**What bots are like**
+- **They look like your friends:** each bot copies the avatar and name of a
+  Roblox friend of someone in the server. If there aren't enough friends, it
+  uses a generic avatar and name **(suggested)**.
+- **"(bot)" is shown only in the bottom-left live scoreboard** (for example
+  "Mango (bot)"). Bots are not listed in the top-right player list
+  **(suggested)**.
+- **Skill: medium.** They search properly, chase, and catch careless
+  players.
+- **Hide and seek:** bots can be **hiders or seekers**, just like real
+  players. **Fighting:** bots fight.
+
+**Rewards with bots**
+- **Only you and bots:** **no coins or XP.**
+- **Real players plus bots:** **very, very reduced** coins and XP, about 10%
+  of normal **(suggested)**.
 
 ## 6. Movement
 
@@ -207,6 +237,10 @@ The round ends early if every hider is caught.
 - If **any hider survives**, the survivors get the win bonus.
 - If **everyone is caught**, the **starting seekers** get the win bonus.
 - Everyone earns coins for what they did (section 12).
+- If **every seeker leaves the game** mid-round, the round **ends with no
+  rewards** for anyone.
+- When a seeker bonks someone, the seeker's equipped **bonk effect** plays
+  (cosmetic, section 11).
 
 **Results screen stats**
 - Hiders: time hidden, close calls, flashsteps, taunts, points, coins.
@@ -217,10 +251,16 @@ The round ends early if every hider is caught.
 
 - **Free for all, one-hit KO.**
 - **Win:** first to **10 KOs**, or the most KOs when the **3-minute** timer
-  ends.
+  ends. **Tie-breaker:** whoever was KO'd the fewest times wins; if that's
+  tied too, it's a shared win **(suggested)**.
 - **Weapons:** everyone starts with **boxing gloves**. Pickups around the map:
   **squeaky hammers, dodgeballs**, and the hide and seek items (banana peel,
   decoy balloon).
+- **Dodgeballs:** click to throw where you aim, **hold to charge** a faster,
+  longer throw, and balls **bounce off walls once** so you can bank shots.
+- **When someone is KO'd:** the KO'er's equipped **KO effect** plays. The
+  default is a goofy **confetti poof**. KO effects are cosmetics (section
+  11).
 - **Defense:** the **flashstep** is the main dodge, plus **spawn protection**
   for 2 seconds **(suggested)** after respawning.
 - **Respawn time:** 4 seconds.
@@ -385,7 +425,12 @@ The mockups use stand-in backgrounds; only the UI is the target.
 ## 11. Shop, lockers and cosmetics
 
 - **Unlockables:** titles, squeaky hammer skins, flashstep afterimage colors,
-  emotes and taunt sounds, and **player list banners**. **No trails.**
+  emotes and taunt sounds, **player list banners**, **KO effects** (fighting;
+  default is the confetti poof) and **bonk effects** (hide and seek). **No
+  trails.**
+- **Emotes** are used from an **emote wheel** (hold a key) and work
+  **anywhere**: office, between rounds and during rounds. **Emotes come in a
+  later update** because finding good animations takes time.
 - **Banners** show behind your name in the top-right player list and on your
   profile card. They come from:
   - The **shop** (coins, cooler ones for Robux, in the daily rotation; the shop
@@ -410,7 +455,7 @@ The mockups use stand-in backgrounds; only the UI is the target.
 | VIP | Gold name, VIP chat tag, VIP-only title | placeholder 299 R$ |
 | 2× Coins | Double coins from every round | placeholder 199 R$ |
 | Exclusive Pack | Special hammer skins, afterimage and emote | placeholder 399 R$ |
-| **PS Plus** | In the owner's private server: pick the map, mode, cards and timers | **200 R$** |
+| **PS Plus** | In the owner's private server: pick the map, mode, cards and timers, and add bots | **200 R$** |
 
 **Private servers** are available. Without PS Plus they play exactly like
 public servers.
@@ -485,22 +530,39 @@ Work one milestone at a time; the owner tests in Studio before the next.
    tables, footsteps, tense music near seekers.
 5. **UI:** HUD, results screen, bonked banner, matching the mockups.
 6. **Fighting mode.**
-7. **Rule-change cards** and the map lighting variation.
-8. **Saving and progression:** coins, XP, levels, prestige.
-9. **Shop, lockers and cosmetics** (including banners), game passes, coin
-   packs, PS Plus private server settings, and the **top-right player list
-   with profile cards**.
-10. **Retention:** daily rewards, quests, leaderboards, badges, group perks,
+7. **Bots** for hide and seek and fighting, the "waiting for players"
+   screen, and reduced rewards with bots.
+8. **Rule-change cards** and the map lighting variation.
+9. **Saving and progression:** coins, XP, levels, prestige.
+10. **Shop, lockers and cosmetics** (including banners, KO effects and bonk
+    effects), game passes, coin packs, PS Plus private server settings
+    (including bots), and the **top-right player list with profile cards**.
+11. **Retention:** daily rewards, quests, leaderboards, badges, group perks,
     tips for new players.
-11. **Mobile and console controls,** key rebinding.
-12. **Maps** (built by the owner in Studio): play place small and big,
+12. **Settings menu** (section 18), **mobile and console controls**, key
+    rebinding.
+13. **Maps** (built by the owner in Studio): play place small and big,
     trampoline park, family fun center.
-13. **Polish and launch prep.**
+14. **Polish and launch prep.**
+15. **Later update:** emotes and the emote wheel.
 
 ## 17. Still to decide
 
-- Game name.
+- Game name (parked for now).
 - Office mini activities.
 - More rule-change cards.
 - Real prices for items, passes and coin packs.
 - Details for later modes (dodgeball, prop hunt, tag, hot potato).
+- Which emotes and animations.
+
+## 18. Settings menu
+
+| Group | Settings |
+|---|---|
+| Audio | Separate sliders for music, sound effects and voice |
+| Camera and controls | Mouse and stick sensitivity, field of view, key rebinding (PC, console, mobile) |
+| Graphics | A **performance mode** for weaker phones and PCs: fewer effects and simpler lighting |
+| Privacy | **Show my country on my profile** (off by default) |
+| Streamer mode | Hides player names and country flags on screen |
+| Accessibility | **Colorblind-friendly team colors** (an alternative to teal and pink) |
+| **Show hitbox** | Draws an outline of **your torso hitbox where the server thinks you are**, so players can tell when the server is lagging (if the outline trails behind you, the server is slow) |
