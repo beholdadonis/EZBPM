@@ -311,6 +311,43 @@ A mix of the owner's other game **WYR: Disasters** and **Goofy Gorillas**:
 Fonts: a heavy geometric font for headers and numbers (Montserrat Black or
 similar in Roblox) and a rounded font for body text (Nunito or similar).
 
+### Player list (top right)
+
+The game has **two lists**:
+
+- **Top-right player list:** replaces Roblox's default player list (which is
+  hidden). Shows everyone in the server, all the time.
+- **Bottom-left scoreboard:** live round scores during rounds only (as in the
+  HUD mockup). Unchanged.
+
+Each row in the player list shows:
+- The player's **equipped banner** behind their name (section 11).
+- Their name (gold for VIP), **level and prestige badge**, and **equipped
+  title**.
+- During rounds, a small teal or pink dot for their role **(suggested)**.
+
+Sorted by level outside rounds and by round points during rounds
+**(suggested)**.
+
+### Profile card
+
+Clicking a name in the player list opens that player's **profile card**:
+
+| Shows | Notes |
+|---|---|
+| Banner, name, level, prestige, title | Same as their row, bigger |
+| **Ping** | Live |
+| **Device** | General type only: PC, phone/tablet or console, based on how they're playing. Roblox doesn't expose exact device models. |
+| **Country flag** | **Opt-in:** off by default; players turn it on in settings. Never anything more specific than country. |
+| **Showcase** | Up to 3 **(suggested)** items or badges the player picks to show off |
+
+Buttons, rebuilding Roblox's own player list options:
+- **Add friend / Unfriend**
+- **Block / Unblock**
+- **Examine avatar** (Roblox's inspect menu, which links to their profile)
+- **Report:** Roblox may not let games open its report screen directly. If
+  not, players report through Roblox's own menu (Esc). Check when building.
+
 ### Mockups (match these)
 
 | File | Shows |
@@ -325,7 +362,14 @@ The mockups use stand-in backgrounds; only the UI is the target.
 ## 11. Shop, lockers and cosmetics
 
 - **Unlockables:** titles, squeaky hammer skins, flashstep afterimage colors,
-  emotes and taunt sounds. **No trails.**
+  emotes and taunt sounds, and **player list banners**. **No trails.**
+- **Banners** show behind your name in the top-right player list and on your
+  profile card. They come from:
+  - The **shop** (coins, cooler ones for Robux, in the daily rotation; the shop
+    gets a **Banners** tab, which the shop mockup predates).
+  - **Level rewards** and **prestige**.
+  - **Events and limiteds.**
+  - **Achievements:** quests and secret challenges.
 - **Shop (vending machine):**
   - Most items cost **coins**; the cooler ones cost **Robux**.
   - A **daily rotating shop**.
@@ -420,8 +464,9 @@ Work one milestone at a time; the owner tests in Studio before the next.
 6. **Fighting mode.**
 7. **Rule-change cards** and the map lighting variation.
 8. **Saving and progression:** coins, XP, levels, prestige.
-9. **Shop, lockers and cosmetics,** game passes, coin packs, PS Plus
-   private server settings.
+9. **Shop, lockers and cosmetics** (including banners), game passes, coin
+   packs, PS Plus private server settings, and the **top-right player list
+   with profile cards**.
 10. **Retention:** daily rewards, quests, leaderboards, badges, group perks,
     tips for new players.
 11. **Mobile and console controls,** key rebinding.
