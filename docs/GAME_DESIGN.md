@@ -573,6 +573,7 @@ Buttons, rebuilding Roblox's own player list options:
 | `docs/mockups/shop.png` | Shop: featured limited, giveaway, daily shop, game passes, coin packs, daily reward streak |
 | `docs/mockups/player-list.png` | Top-right player list with banners, a profile card, and the country opt-in setting |
 | `docs/mockups/menu-buttons.png` | Office view: top-left menu buttons with badges, intermission timer, and the walk-up prompt at a vending machine |
+| `docs/mockups/inventory.png` | Inventory: loadout preview, equipped slots, item grid, profile showcase picker, item details |
 
 The mockups use stand-in backgrounds; only the UI is the target.
 
@@ -599,7 +600,21 @@ The mockups use stand-in backgrounds; only the UI is the target.
   - **Giveaways** (for example weekly, for group members who like the game).
 - **Coin packs** can be bought with Robux.
 - **Inventory** (menu button, or the lockers in the office) is where
-  players equip what they own.
+  players equip what they own. Layout (`docs/mockups/inventory.png`):
+  - **Tabs:** Hammers, Afterimages, Banners, Titles, KO Effects, Bonk
+    Effects, Taunts, and Emotes (marked "Soon" until emotes arrive).
+  - **Left:** a rotatable preview of your avatar wearing your loadout (with
+    your afterimage behind you), and an **Equipped** list with one slot per
+    category.
+  - **Middle:** a grid of every item in the tab, owned or not, filterable
+    (All / Owned / Rarity). Owned items show where they came from; locked
+    items show how to get them (level, shop, event). Equipped items have a
+    teal check.
+  - **Below the grid:** the **profile showcase** picker (3 slots shown on
+    your profile card).
+  - **Right:** details for the selected item (big preview, rarity,
+    description, where you got it, stats like "bonks with it") with
+    **Preview** and **Equip** buttons.
 - Roblox doesn't let games read a player's Robux balance, so the wallet only
   shows coins.
 
