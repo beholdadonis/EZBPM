@@ -591,7 +591,7 @@ The mockups use stand-in backgrounds; only the UI is the target.
 - **Banners** show behind your name in the top-right player list and on your
   profile card. They come from:
   - The **shop** (coins, cooler ones for Robux, in the daily rotation; the shop
-    gets a **Banners** tab, which the shop mockup predates).
+    has a **Banners** tab).
   - **Level rewards** and **prestige**.
   - **Events and limiteds.**
   - **Achievements:** quests and secret challenges.
@@ -600,6 +600,9 @@ The mockups use stand-in backgrounds; only the UI is the target.
   - A **daily rotating shop**.
   - **Robux exclusives** and **limited items** (limited stock and time).
   - **Giveaways** (for example weekly, for group members who like the game).
+- **Shop tabs** (`docs/mockups/shop.png`): Featured, Hammers, Afterimages,
+  Banners, Titles, Effects (KO and bonk effects), Taunts, Passes, Coins.
+  Emotes get a tab when they arrive.
 - **Coin packs** can be bought with Robux.
 - **Inventory** (menu button, or the lockers in the office) is where
   players equip what they own. Layout (`docs/mockups/inventory.png`):
