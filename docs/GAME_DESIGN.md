@@ -59,7 +59,9 @@ aiming.
 
 ### The office (lobby)
 
-Everyone spawns in an **office**. (Not a bathroom: Roblox restricts
+Everyone spawns in an **office**: the **headquarters of the company that
+owns all three venues**, with posters of the play place, trampoline park
+and family fun center on the walls. (Not a bathroom: Roblox restricts
 experiences set in private spaces like bathrooms to ID-verified 17+ users.)
 
 The office has:
@@ -355,18 +357,23 @@ game loads the right one at the start of each match.
 - **Ball colors:** each ball pit has **its own color theme** (for example
   one classic red/blue/yellow pit, one neon pit) **(suggested themes)**.
 - **Closed-for-the-night details:** chairs flipped up on the snack bar
-  tables, mop buckets and wet floor signs, and a lost and found (forgotten
+  tables, mop buckets and wet floor signs (decoration only, not slippery),
+  and a lost and found (forgotten
   shoes, a lost teddy bear, a sock in the ball pit).
 
 ### 9.2 Trampoline park
 
 - Trampoline grid, foam pit (dive in to hide), ninja course (swinging ropes,
   rings, balance beams), trampoline dodgeball court, bouldering climbing wall.
+- **Look:** an **industrial warehouse**: concrete floors, steel beams, and
+  padded, colorful trampolines.
 
 ### 9.3 Family fun center
 
 - Laser tag maze (dark, neon, great for hiding), arcade floor,
   glow-in-the-dark mini golf.
+- **Laser tag maze look:** **blacklight and light fog** with glowing neon
+  walls. It's **always dim**, whatever the lighting variation is doing.
 
 ### 9.4 Living map: interactive pieces
 
