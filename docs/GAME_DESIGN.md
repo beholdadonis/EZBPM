@@ -356,6 +356,7 @@ Buttons, rebuilding Roblox's own player list options:
 | `docs/mockups/results.png` | Results: winner banner, hider and seeker tables, Round MVP, mode vote, coins and XP earned |
 | `docs/mockups/bonked-and-card-reveal.png` | "BONKED!" moment (left) and the locked card reveal (right) |
 | `docs/mockups/shop.png` | Shop: featured limited, giveaway, daily shop, game passes, coin packs, daily reward streak |
+| `docs/mockups/player-list.png` | Top-right player list with banners, a profile card, and the country opt-in setting |
 
 The mockups use stand-in backgrounds; only the UI is the target.
 
