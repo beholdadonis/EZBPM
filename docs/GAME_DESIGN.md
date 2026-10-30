@@ -387,6 +387,18 @@ These apply to every map that has them.
 - Any player can **open and close** doors (party rooms, staff areas). Doors
   **creak**, so moving through them makes noise.
 
+**Atmosphere**
+- **It's always night outside:** dark sky, streetlights and a parking lot
+  through the windows.
+- **Area sounds are tiny and never cover footsteps:** for example faint
+  arcade beeps, quiet party music, rustling balls. Footsteps always stay
+  easy to hear.
+
+**Other maps**
+- **Trampoline park foam pit:** the foam cubes move, splash and spill
+  exactly like the ball pit balls (same per-player rules and cleaning robot).
+- **Family fun center mini golf:** scenery only for now.
+
 **Where players can go**
 - High spots are allowed: **arcade machines, shelves and other high areas**.
 - **Not the very top roof** of the play structure; it's blocked off.
