@@ -24,14 +24,16 @@ sorted.
    light means it worked. Restart Claude Desktop if Studio doesn't show up
    in Claude.
 2. In the Claude app, click **Projects** → **+ New Project** and name it.
-3. Click **+** in the project's knowledge panel and add these 30 files:
+3. In the project's side panel, next to **Context**, click **Add** and add
+   these 30 files:
    - `GG.md` and `docs/GAME_DESIGN.md`
    - the 4 floor plans in `docs/maps/` (3 play place floors and the office)
    - the 9 mockups in `docs/mockups/`
    - the 15 Goofy Gorillas screenshots listed in `GG.md` 3.1
-   Keep the other 38 screenshots in a folder and drag one into a chat when
-   Claude asks for it. Too many pictures fill up Claude's memory.
-4. Click **Set project instructions**, paste this, and save:
+   Don't use the **+** in the chat box for these: that only attaches files
+   to one chat. Keep the other 38 screenshots in a folder and drag one into
+   a chat when Claude asks for it. Too many pictures fill up Claude's memory.
+4. Next to **Instructions**, click **Edit**, paste this, and save:
    > When I say claudereadgg, read GG.md from the project files from top to
    > bottom, look at all the pictures in the project, then ask me what to
    > begin with, exactly as GG.md says. Follow GG.md's building rules for
