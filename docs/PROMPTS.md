@@ -13,25 +13,33 @@ with. Give one job at a time and test in Studio before the next.
 
 ## Setting up normal Claude (once)
 
-1. In the Claude app, make a **Project** for the game.
-2. Download the Goofy Gorillas screenshots: open this folder in a terminal
-   (Git Bash on Windows, Terminal on Mac) and run
-   `bash docs/reference/get-goofy-gorillas-screenshots.sh`.
-3. Add these files to the project:
-   - `GG.md`
-   - `docs/GAME_DESIGN.md`
+Use the **Claude desktop app** (not the website): only the app can talk to
+Roblox Studio on your computer. Ask Claude Code for the
+**normal-claude-project.zip** pack; it has every file below, already
+sorted.
+
+1. **Connect Studio to Claude:** open your place in Roblox Studio, open the
+   **⋯** menu, choose **Manage MCP Servers**, turn on **Enable Studio as
+   MCP server**, and connect **Claude Desktop** (quick connect). A green
+   light means it worked. Restart Claude Desktop if Studio doesn't show up
+   in Claude.
+2. In the Claude app, click **Projects** → **+ New Project** and name it.
+3. Click **+** in the project's knowledge panel and add these 29 files:
+   - `GG.md` and `docs/GAME_DESIGN.md`
    - the 3 floor plans in `docs/maps/`
    - the 9 mockups in `docs/mockups/`
-   - the screenshots from `docs/reference/goofy-gorillas/` (all 53, or at
-     least the 15 listed in `GG.md` 3.1)
-4. Paste this into the project's instructions:
+   - the 15 Goofy Gorillas screenshots listed in `GG.md` 3.1
+   Keep the other 38 screenshots in a folder and drag one into a chat when
+   Claude asks for it. Too many pictures fill up Claude's memory.
+4. Click **Set project instructions**, paste this, and save:
    > When I say claudereadgg, read GG.md from the project files from top to
-   > bottom, look at all the pictures, then ask me what to begin with,
-   > exactly as GG.md says.
-5. Make sure Claude is connected to Roblox Studio (Roblox's Studio MCP) with
-   your place open.
+   > bottom, look at all the pictures in the project, then ask me what to
+   > begin with, exactly as GG.md says. Follow GG.md's building rules for
+   > everything you build in Roblox Studio.
+5. Start a chat in the project and type **claudereadgg**.
 
-Whenever `GG.md` changes, upload the new version to the project.
+Whenever `GG.md` changes, delete the old copy from the project and add the
+new one.
 
 ## A good order
 
