@@ -915,6 +915,11 @@ that runs the play places**. Picture: `docs/maps/office.png`.
 - **Voting happens on screen.** The map vote is a pop-up (Part 6); the big
   screen over the doors only shows the countdown and the live results.
   There's nothing to walk up to for voting.
+- **You arrive by tube.** Every time players arrive (joining, or coming
+  back after a match), they drop out of a **giant tube slide** in the
+  ceiling into a **big ball pit** in the middle of the room, with a short
+  landing cutscene (`docs/GAME_DESIGN.md`, "Arriving in the office"). Then
+  they can wade around, look around and climb out.
 - **No brand or mascot.** The company and game names are still parked, so
   signs say **"HQ"** for now.
 
@@ -936,7 +941,7 @@ that runs the play places**. Picture: `docs/maps/office.png`.
 |---|---|
 | Walls | White (`#F2F4F8`) with one thick horizontal stripe at waist height made of four blocks in the wing colors: orange `#FF8C32`, royal blue `#3D6BFF`, lime `#8EDB3C`, purple `#7B4DFF` |
 | Ceiling | White, flat, with square light panels |
-| Floor | Light wood (WoodPlanks material), with rugs in the lounge and under the spawn |
+| Floor | Light wood (WoodPlanks material), with a big rug in the lounge |
 | Furniture | Rounded, chunky and colorful, in the wing colors |
 | Team colors | Hot pink and teal only as small accents, same rule as the maps |
 
@@ -948,6 +953,8 @@ so the office needs **plenty of its own light**:
   reception, two over the desk pod.
 - A thin glowing strip (Neon) along the top of every wall, in the wing
   colors.
+- A glowing ring around the tube's mouth and a `SpotLight` inside the
+  mouth pointing down at the ball pit, so every landing is well lit.
 - Office lights are **not** tagged `DimmableLight`; the lighting variation
   only affects maps.
 
@@ -977,26 +984,32 @@ players crowd here).
 | Beanbags (4) | Centered at (−22, 395), (−22, 403), (−22, 411), (−22, 419), facing the TV | 3 × 3 × 2, lime, purple, yellow, orange | |
 | Giant plush bear | North-west corner at (−26, 368) | 8 tall, sitting | |
 
-### South-west corner: the decor ball pit
+### South-west corner: the plush corner
 
 | Thing | Where | Notes |
 |---|---|---|
-| Ball pit | x −28 to −8, z 430–450, floor sunk 3 studs | Two layers of anchored balls (classic red, blue, yellow, green) with `CanCollide` off, so players can wade in. **Not** tagged `BallPit` (no gameplay). |
-| Padded edge | Around the pit, 1.5 wide, 2.5 high, with a 6-stud gap on the east side | |
-| Tiny slide | Into the pit from the east side, starting at (−4, 440) | Decor; **not** tagged `Slide` |
-| Sign | On the west wall above the pit, Y 4–8 | "BALL PIT TESTING DEPARTMENT" |
+| Giant plushies | x −28 to −8, z 430–450 | A pile of giant plushies (a dinosaur about 7 tall, a bunny about 6 tall) and a heap of small ones. Generic animals, no famous characters. |
+| Beanbags (2) | (−12, 434) and (−12, 444) | |
+| Sign | On the west wall above the pile, Y 4–8 | "NAP ZONE (employees only)" |
 
-### Center: the spawn
+### Center: the arrival (big tube and spawn ball pit)
 
-| Thing | Where | Notes |
-|---|---|---|
-| Spawn rug | Round, radius 10, centered at (40, 397) | Original confetti pattern |
-| SpawnLocation | 12 × 1 × 12, centered on the rug | `Transparency` 1, no decal, `Neutral` on |
-| Ball chandelier | Hanging over the rug at Y 16–20 | About 60 colorful balls on strings from one ring |
-| Slide sculpture | Along the ceiling from (0, 380) to (64, 380), Y 18–22 | A looping tube slide as decoration, no collision |
+This is the first thing every player sees. Look at **[06] [30] [33] [36]**
+for how tube slides and ball pits feel.
 
-**Keep clear:** the open floor x 20–60, z 374–425 (the main crowd area),
-apart from the rug.
+| Thing | Where | Notes | Tag |
+|---|---|---|---|
+| Spawn ball pit | Inside x 24–56, z 386–416 (32 × 30), floor sunk to Y −3, padded floor | Filled with moving balls up to about Y 0 by code. Ball colors: orange, royal blue, lime, purple and white. | |
+| Ball zone | An invisible part filling the pit: x 24–56, z 386–416, Y −3 to 1 | `CanCollide` off, `CanTouch` and `CanQuery` on. Code fills it with moving balls, like the play place pits. **Not** tagged `BallPit` (no hiding in the office). | `BallPitBalls` |
+| Padded edge | All around the pit, 2 wide, 2 high (x 22–58, z 384–418), with 8-stud gaps on the north and south sides (x 36–44) | Chunky padding in the wing colors | |
+| Exit steps | Padded steps inside the pit at both gaps, from the pit floor (Y −3) up to the room floor | Players can also just jump over the edge | |
+| SpawnLocation | 12 × 1 × 12 on the pit floor, centered at (40, 401) | `Transparency` 1, no decal, `Neutral` on. Code moves players into the tube from here. | |
+| The big tube | Comes in through the **east wall above the lockers** at (110, 401), runs west under the ceiling (center line Y 18), then bends down in a big elbow and points straight down over the pit's center. Its open mouth is at **Y 10**, centered at (40, 401). | A giant tube slide: 13 across outside, 12 inside, glossy purple (`#7B4DFF`) plastic with see-through stripe windows every 8 studs, a flared lip and a glowing lime ring around the mouth. An "ARRIVALS ↓" sign on its side. Build it as a mesh if you can (2.7). `CanCollide` off (it's decoration; players never touch it). | |
+| Tube drop point | An invisible part 10 × 1 × 10 inside the tube's mouth at Y 13, centered at (40, 401) | `CanCollide`, `CanTouch` and `CanQuery` off. Code drops players from random spots on it. | `OfficeTube` |
+
+**Keep clear:** a 6-stud walkway all the way around the pit's edge
+(x 16–64, z 378–424). Nothing under the tube's run may be taller than
+Y 9, so the tube never blocks the arrival camera.
 
 ### South wall: reception and leaderboards
 
@@ -1032,13 +1045,14 @@ apart from the rug.
    with their tags, attributes and `Display` SurfaceGuis.
 3. **Shop and lockers:** vending machines and lockers, with tags and
    `PromptPoint` attachments.
-4. **Furniture:** lounge, reception and waiting area, desk pod, spawn rug
-   and `SpawnLocation`.
-5. **Fun stuff:** the decor ball pit, the plush bear, the ball chandelier,
-   the slide sculpture, posters, the logo wall, the "under construction"
-   corner.
-6. **Lighting.**
-7. Run every check in 2.8 on `Workspace.Office`.
+4. **Furniture:** lounge, reception and waiting area, desk pod.
+5. **The arrival:** the spawn ball pit (edge, steps, ball zone,
+   `SpawnLocation`), the big tube with its ring light, and the
+   `OfficeTube` drop point.
+6. **Fun stuff:** the plush bear, the plush corner, posters, the logo
+   wall, the "under construction" corner.
+7. **Lighting.**
+8. Run every check in 2.8 on `Workspace.Office`.
 
 ---
 
@@ -1122,6 +1136,8 @@ them in `ReplicatedStorage.Assets.Sounds` with these names:
 | `Punch` | Boxing glove hit |
 | `ConfettiPop` | KO confetti poof |
 | `DoorCreak` | Doors |
+| `TubeWhoosh` | Shooting out of the office arrival tube |
+| `BallSplash` | Landing in a ball pit |
 | `FootstepCarpet`, `FootstepPad`, `FootstepMetal` | Footsteps on each floor type |
 
 Keep area sounds quiet; footsteps must always be easy to hear.
@@ -1177,6 +1193,7 @@ make the buttons work.
 | `SeekerBlind` | No mockup yet; use the Bonked style | Full black background, `Countdown`, `RoleBanner`, `Tip` |
 | `MenuButtons` | `menu-buttons.png` | `Shop`, `Inventory`, `Quests`, `Settings` (each with `Icon`, `Label`, `Badge`), `Tooltip` |
 | `Intermission` | `menu-buttons.png` (top center) | `TimeText`, `Label`, `Bar` (`Fill`, `MapVoteMarker`, `MapVoteLabel`) |
+| `TubeIntro` | No mockup: a small slanted glass button in the bottom-right corner, styled like the walk-up prompt's key block | The office arrival cutscene: `Fade` (a full-screen black Frame), `Skip` (a button with `KeyHint` and `Label` "SKIP") |
 | `MapVote` | No mockup yet: same style as the mode vote at the bottom of `results.png`, one bigger card per map with a picture | The pop-up for the map vote in the office's last 15 seconds: `Header` (`Title`, `Timer`), template `MapOption` (`Thumbnail`, `MapName`, `Votes`, `YourVote`) |
 | `Prompt` | `menu-buttons.png` (walk-up prompt) | Template for a custom ProximityPrompt: `KeyBlock` (`Key`, `HoldText`), `Panel` (`Icon`, `ActionText`, `ObjectText`), `HoldBar` (`Fill`), `Line`, `Diamond` |
 | `PlayerList` | `player-list.png` | `Header` (`Count`), `List` (template `PlayerRow` with `Banner`, `Avatar`, `PlayerName`, `Title`, `Level`, `Prestige`, `RoleDot`), `Footer` |

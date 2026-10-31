@@ -82,9 +82,37 @@ The office has:
   with **couches and beanbags** in front of it.
 - **Leaderboards** (see section 13).
 - A **reception desk** with a small waiting area.
-- A small **decor ball pit** corner, just for fun (no gameplay).
+- A **giant tube slide** coming out of the ceiling over a **big ball pit**
+  in the middle of the room: this is how players arrive (below).
+- A **plush corner** with giant plushies and beanbags.
 - Space to hang out. **No mini activities for now**; they come later. A
   corner of the room stays empty for them.
+
+### Arriving in the office
+
+- **Every time players arrive in the office** (first join, late join, and
+  coming back after every match), they **drop out of the big tube** in the
+  ceiling **into the spawn ball pit**.
+- **Landing cutscene**, about 4 seconds **(suggested)**, with a third-person
+  follow camera:
+  1. A whoosh in the tube, then you **shoot out of its mouth**; the camera
+     follows you down.
+  2. **SPLASH** into the balls (balls burst up around you).
+  3. You pop up and **look left and right, confused**, like "where am I?"
+     (code turns the character's head; no animation file needed).
+  4. The normal office camera takes over and you can move.
+- **Skipping:** the very first time, everyone sees the whole thing. After
+  that, a **Skip** button (or any key, tap or controller button) jumps
+  straight to standing in the pit with full control. The game remembers
+  that you've seen it.
+- **Coming back after a match:** the screen fades to black on the map, then
+  players drop in **one after another about 0.2 seconds apart**
+  **(suggested)**, from random spots in the tube's mouth, so a stream of
+  players pours into the pit. Each player sees their own landing.
+- After landing, players can **wade around, look around, or climb out**
+  (steps on two sides, or jump over the padded edge). The pit has real
+  moving balls like the play place, but **no hiding gameplay**. No fall
+  damage.
 
 ### Match loop
 
@@ -495,7 +523,8 @@ positions; it finds pieces by **CollectionService tags**:
 | `NoGo` | Blocked-off areas, like the top roof of the play structure |
 
 The office also uses tags: `OfficeDoor`, `VendingMachine`, `Locker`,
-`MapVoteBoard`, `OfficeTV`, `LeaderboardBoard`.
+`MapVoteBoard`, `OfficeTV`, `LeaderboardBoard`, `OfficeTube` (where players
+drop out of the arrival tube). Its spawn ball pit uses `BallPitBalls`.
 
 ## 10. UI
 
