@@ -90,9 +90,12 @@ The office has:
 
 ### Arriving in the office
 
-- **Every time players arrive in the office** (first join, late join, and
-  coming back after every match), they **drop out of the big tube** in the
-  ceiling **into the spawn ball pit**.
+- **Every time a player joins the server** (including rejoining and late
+  joining), they **drop out of the big tube** in the ceiling **into the
+  spawn ball pit**.
+- **Coming back to the office after a match does not replay it.** No tube
+  drop and **no fade to black**: the owner has their own idea for that
+  transition and will explain it. Ask the owner before building it.
 - **Landing cutscene**, about 4 seconds **(suggested)**, with a third-person
   follow camera:
   1. A whoosh in the tube, then you **shoot out of its mouth**; the camera
@@ -105,10 +108,6 @@ The office has:
   that, a **Skip** button (or any key, tap or controller button) jumps
   straight to standing in the pit with full control. The game remembers
   that you've seen it.
-- **Coming back after a match:** the screen fades to black on the map, then
-  players drop in **one after another about 0.2 seconds apart**
-  **(suggested)**, from random spots in the tube's mouth, so a stream of
-  players pours into the pit. Each player sees their own landing.
 - After landing, players can **wade around, look around, or climb out**
   (steps on two sides, or jump over the padded edge). The pit has real
   moving balls like the play place, but **no hiding gameplay**. No fall
@@ -851,6 +850,8 @@ Work one milestone at a time; the owner tests in Studio before the next.
 - Real prices for items, passes, coin packs and the launch bundle.
 - Details for later modes (dodgeball, prop hunt, tag, hot potato).
 - Which emotes and animations.
+- How players get back to the office after a match (the owner has an idea
+  and will explain it).
 
 ## 18. Settings menu
 

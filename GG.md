@@ -915,11 +915,14 @@ that runs the play places**. Picture: `docs/maps/office.png`.
 - **Voting happens on screen.** The map vote is a pop-up (Part 6); the big
   screen over the doors only shows the countdown and the live results.
   There's nothing to walk up to for voting.
-- **You arrive by tube.** Every time players arrive (joining, or coming
-  back after a match), they drop out of a **giant tube slide** in the
-  ceiling into a **big ball pit** in the middle of the room, with a short
-  landing cutscene (`docs/GAME_DESIGN.md`, "Arriving in the office"). Then
-  they can wade around, look around and climb out.
+- **You arrive by tube.** Every time a player **joins the server**, they
+  drop out of a **giant tube slide** in the ceiling into a **big ball pit**
+  in the middle of the room, with a short landing cutscene
+  (`docs/GAME_DESIGN.md`, "Arriving in the office"). Then they can wade
+  around, look around and climb out.
+- **Coming back after a match is different:** no tube drop and no fade to
+  black. The owner has their own idea for that transition and will explain
+  it. **Ask the owner before building anything for it.**
 - **No brand or mascot.** The company and game names are still parked, so
   signs say **"HQ"** for now.
 
@@ -1193,7 +1196,7 @@ make the buttons work.
 | `SeekerBlind` | No mockup yet; use the Bonked style | Full black background, `Countdown`, `RoleBanner`, `Tip` |
 | `MenuButtons` | `menu-buttons.png` | `Shop`, `Inventory`, `Quests`, `Settings` (each with `Icon`, `Label`, `Badge`), `Tooltip` |
 | `Intermission` | `menu-buttons.png` (top center) | `TimeText`, `Label`, `Bar` (`Fill`, `MapVoteMarker`, `MapVoteLabel`) |
-| `TubeIntro` | No mockup: a small slanted glass button in the bottom-right corner, styled like the walk-up prompt's key block | The office arrival cutscene: `Fade` (a full-screen black Frame), `Skip` (a button with `KeyHint` and `Label` "SKIP") |
+| `TubeIntro` | No mockup: a small slanted glass button in the bottom-right corner, styled like the walk-up prompt's key block | The arrival cutscene when a player joins: `Skip` (a button with `KeyHint` and `Label` "SKIP") |
 | `MapVote` | No mockup yet: same style as the mode vote at the bottom of `results.png`, one bigger card per map with a picture | The pop-up for the map vote in the office's last 15 seconds: `Header` (`Title`, `Timer`), template `MapOption` (`Thumbnail`, `MapName`, `Votes`, `YourVote`) |
 | `Prompt` | `menu-buttons.png` (walk-up prompt) | Template for a custom ProximityPrompt: `KeyBlock` (`Key`, `HoldText`), `Panel` (`Icon`, `ActionText`, `ObjectText`), `HoldBar` (`Fill`), `Line`, `Diamond` |
 | `PlayerList` | `player-list.png` | `Header` (`Count`), `List` (template `PlayerRow` with `Banner`, `Avatar`, `PlayerName`, `Title`, `Level`, `Prestige`, `RoleDot`), `Footer` |
