@@ -920,9 +920,12 @@ that runs the play places**. Picture: `docs/maps/office.png`.
   in the middle of the room, with a short landing cutscene
   (`docs/GAME_DESIGN.md`, "Arriving in the office"). Then they can wade
   around, look around and climb out.
-- **Coming back after a match is different:** no tube drop and no fade to
-  black. The owner has their own idea for that transition and will explain
-  it. **Ask the owner before building anything for it.**
+- **Coming back after a match:** players still fall out of the tube into
+  the ball pit, but with **no cutscene** (normal camera, they can move as
+  soon as they land).
+- **Getting from the map to the office** (instead of a fade to black) is
+  the owner's own idea, not decided yet. **Ask the owner before building
+  anything for it.**
 - **No brand or mascot.** The company and game names are still parked, so
   signs say **"HQ"** for now.
 
