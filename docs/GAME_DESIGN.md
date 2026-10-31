@@ -64,16 +64,27 @@ owns all three venues**, with posters of the play place, trampoline park
 and family fun center on the walls. (Not a bathroom: Roblox restricts
 experiences set in private spaces like bathrooms to ID-verified 17+ users.)
 
+**Look:** a **fun toy-company HQ**: bright, warm and colorful inside (a
+safe, cheerful contrast to the dark play places), with playful touches like
+beanbags, giant plushies and slide and ball pit decor. **One big open
+room.** Full layout: `GG.md` Part 4.
+
 The office has:
-- **Big double doors on one wall**, with the countdown above them.
+- **Big double doors on one wall**, with a big screen above them showing
+  the countdown.
 - **Vending machines:** walk up to one to open the **shop**.
 - **Lockers:** walk up to one to open your **Inventory** and **equip** titles, hammer skins, afterimage
   colors, emotes and taunts.
-- **Map vote board.**
-- **A TV showing the current round live**, for late joiners and AFK players.
+- **Map vote:** players vote in an **on-screen pop-up**; the screen above
+  the doors shows the **live results** for everyone. There's nothing to
+  walk up to for voting.
+- **A TV showing the current round live**, for late joiners and AFK players,
+  with **couches and beanbags** in front of it.
 - **Leaderboards** (see section 13).
-- Space to hang out. **No mini activities for now**; they come later, once
-  the office layout has enough room. Leave open space for them.
+- A **reception desk** with a small waiting area.
+- A small **decor ball pit** corner, just for fun (no gameplay).
+- Space to hang out. **No mini activities for now**; they come later. A
+  corner of the room stays empty for them.
 
 ### Match loop
 
@@ -88,7 +99,8 @@ The office has:
    the next mode vote pop up there (about 15 to 20 seconds total
    **(suggested)**), then the next round starts.
 5. **After round 5,** everyone returns to the office for a **40-second
-   intermission**. The **map vote** opens for the last 15 seconds.
+   intermission**. The **map vote** (on-screen pop-up) opens for the last
+   15 seconds.
 6. Repeat with the winning map.
 
 ### Each round can have

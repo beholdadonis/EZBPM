@@ -24,9 +24,9 @@ sorted.
    light means it worked. Restart Claude Desktop if Studio doesn't show up
    in Claude.
 2. In the Claude app, click **Projects** → **+ New Project** and name it.
-3. Click **+** in the project's knowledge panel and add these 29 files:
+3. Click **+** in the project's knowledge panel and add these 30 files:
    - `GG.md` and `docs/GAME_DESIGN.md`
-   - the 3 floor plans in `docs/maps/`
+   - the 4 floor plans in `docs/maps/` (3 play place floors and the office)
    - the 9 mockups in `docs/mockups/`
    - the 15 Goofy Gorillas screenshots listed in `GG.md` 3.1
    Keep the other 38 screenshots in a folder and drag one into a chat when
@@ -43,7 +43,7 @@ new one.
 
 ## A good order
 
-1. **Normal Claude:** placeholder office (`GG.md` Part 4) and the play
+1. **Normal Claude:** the office lobby (`GG.md` Part 4) and the play
    place greybox (Part 3, step 1).
 2. **Claude Code:** Milestone 1.
 3. **Normal Claude:** the squeaky hammer (Part 5).
@@ -58,7 +58,7 @@ new one.
 
 After `claudereadgg`, pick from its menu, for example:
 
-> Build the placeholder office (Part 4).
+> Build the office lobby (Part 4).
 
 > Build the play place greybox (Part 3, step 1).
 
@@ -78,7 +78,7 @@ After `codereadgg`:
 > section 5 describes (doors open after the map loads, 5 rounds per match,
 > mode vote each round, results pause on the map, back to the office for a
 > 40-second intermission with the map vote in the last 15 seconds, late
-> joiners, AFK toggle and detection). Use the placeholder office and the
+> joiners, AFK toggle and detection). Use the office lobby and the
 > play place greybox normal Claude built. Replace the sample Hello scripts.
 > Tell me how to test it with 2 players in Studio.
 

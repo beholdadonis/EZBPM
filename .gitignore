@@ -11,3 +11,6 @@ sourcemap.json
 
 # Reference screenshots of another game (download with docs/reference/get-goofy-gorillas-screenshots.sh)
 docs/reference/goofy-gorillas/
+
+# Scratch files for generating docs pictures
+/.work/

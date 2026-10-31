@@ -25,7 +25,7 @@ When the owner says **claudereadgg**:
    - anything you're missing (a picture you don't have, Studio not
      connected),
    - this menu, and ask the owner **what to begin with**:
-     1. Placeholder office lobby (Part 4)
+     1. Office lobby (Part 4)
      2. Play place greybox (Part 3, step 1)
      3. Play place, next build step (Part 3, steps 2 to 8)
      4. Squeaky hammer (Part 5)
@@ -198,7 +198,7 @@ check it against this chart. Delete the dummy when done.
 | Party balloon | 2 across, 4-stud string |
 | Plushies | 1.5 to 3; giant ones 8 |
 | Cups, plates, napkins | 0.5 to 1 (never smaller than 0.4) |
-| TV (office) | 12 × 7 |
+| TV (office) | 16 × 9 |
 
 ## 2.6 Where things go, and what they're called
 
@@ -324,6 +324,7 @@ After every build step:
 | `docs/maps/play-place-ground.png` | Ground floor (Y = 0) |
 | `docs/maps/play-place-floor2.png` | Floor 2 (Y = 24) |
 | `docs/maps/play-place-floor3.png` | Floor 3 (Y = 48), big version only |
+| `docs/maps/office.png` | The office lobby (Part 4) |
 | `docs/reference/goofy-gorillas/` | 53 Goofy Gorillas screenshots, listed in `docs/reference/goofy-gorillas.md` |
 
 The Goofy Gorillas screenshots aren't stored in the repo. The owner (or
@@ -901,24 +902,143 @@ Every step ends with the checks in 2.8. Keep every tag.
 
 # Part 4: The office lobby
 
-The real office isn't designed yet (ask the owner before building a
-final one). For now, build a **placeholder office** so the match loop can be
-tested. It must have everything from `docs/GAME_DESIGN.md` section 5
-("The office"), each with its tag:
+Where everyone waits between matches: the **headquarters of the toy company
+that runs the play places**. Picture: `docs/maps/office.png`.
 
-| Piece | Placeholder | Tag |
+## 4.1 The idea
+
+- **A fun toy-company HQ:** bright, warm and colorful, with playful touches
+  everywhere. It's the cheerful, safe place before the dark, tense play
+  places.
+- **One big open room**, so everyone can see the TV, the leaderboards and
+  the screen over the doors from anywhere.
+- **Voting happens on screen.** The map vote is a pop-up (Part 6); the big
+  screen over the doors only shows the countdown and the live results.
+  There's nothing to walk up to for voting.
+- **No brand or mascot.** The company and game names are still parked, so
+  signs say **"HQ"** for now.
+
+## 4.2 Size and position
+
+- Build it as `Workspace.Office`. It's **always there** (maps load behind
+  its doors).
+- **World coordinates** (same origin as the maps): the room's inside is
+  **x −30 to 110, z 362 to 452** (140 × 90 studs), floor top at **Y 0**,
+  ceiling at **Y 24**.
+- Its **north wall** sits right against the play place's south wall, and
+  its **doors line up with the map's office doorway** (map south wall,
+  X 20 to 60). Every map keeps its doorway in that same spot.
+- No windows (it's night outside and the room faces inward).
+
+## 4.3 Look
+
+| Part | Look |
+|---|---|
+| Walls | White (`#F2F4F8`) with one thick horizontal stripe at waist height made of four blocks in the wing colors: orange `#FF8C32`, royal blue `#3D6BFF`, lime `#8EDB3C`, purple `#7B4DFF` |
+| Ceiling | White, flat, with square light panels |
+| Floor | Light wood (WoodPlanks material), with rugs in the lounge and under the spawn |
+| Furniture | Rounded, chunky and colorful, in the wing colors |
+| Team colors | Hot pink and teal only as small accents, same rule as the maps |
+
+**Lighting:** the Lighting settings are shared with the maps (dark, night),
+so the office needs **plenty of its own light**:
+- Ceiling light panels every 16 studs (bright warm white `#FFF1DC`,
+  `Shadows` off).
+- Six warm pendant lamps with shadows: two over the lounge, two over the
+  reception, two over the desk pod.
+- A thin glowing strip (Neon) along the top of every wall, in the wing
+  colors.
+- Office lights are **not** tagged `DimmableLight`; the lighting variation
+  only affects maps.
+
+## 4.4 Where everything goes
+
+All positions are world `(x, z)`, on the office floor (Y 0).
+
+### North wall: the doors
+
+| Thing | Where | Notes | Tag |
+|---|---|---|---|
+| Double doors (2) | Doorway x 32–48, 12 high. Left door x 32–40 hinged at x 32, right door x 40–48 hinged at x 48. They swing **into the office**. | Bright yellow with round porthole windows. Each door is a Model with its main part named `Panel` and an attribute `Side` = `"Left"` or `"Right"`. | `OfficeDoor` |
+| Door screen | On the wall above the doors, x 26–54, Y 13–21 | A big screen with a `SurfaceGui` named `Display` (code fills it: the countdown, then the live map vote results) | `MapVoteBoard` |
+| Venue posters (4) | On the wall at x −18 and 5 (left of the doors) and x 75 and 98 (right), each 8 × 10, Y 4–14 | Play place, trampoline park, family fun center, and a funny "SAFETY FIRST! (fun second)" poster. Original art only. | |
+
+**Keep clear:** x 26–54, z 362–374 in front of the doors (they swing in and
+players crowd here).
+
+### West side: the TV lounge
+
+| Thing | Where | Notes | Tag |
+|---|---|---|---|
+| TV | West wall, centered at z 405, 16 wide × 9 tall, Y 4–13 | A thin black frame. The screen has a `SurfaceGui` named `Display` (code shows the current round) | `OfficeTV` |
+| Lounge rug | x −28 to −4, z 388–422 | Big, soft, colorful | |
+| Couches (2) | x −14 to −10.5, z 392–404 and z 406–418, facing the TV | 12 long, seat 2 high, chunky cushions in orange and blue | |
+| Coffee table | x −18.5 to −15.5, z 400–410 | Low and round-edged, a bowl of plastic balls on top | |
+| Beanbags (4) | Centered at (−22, 395), (−22, 403), (−22, 411), (−22, 419), facing the TV | 3 × 3 × 2, lime, purple, yellow, orange | |
+| Giant plush bear | North-west corner at (−26, 368) | 8 tall, sitting | |
+
+### South-west corner: the decor ball pit
+
+| Thing | Where | Notes |
 |---|---|---|
-| The room | `Workspace.Office`: a room x 0–120, z 362–442, 20 high, in world coordinates, so its north wall sits against the play place's south wall | |
-| Double doors | Two 8 × 12 doors in the north wall centered on x = 40, opening north into the play place's entrance hall | `OfficeDoor` |
-| Spawn | A `SpawnLocation` in the middle of the room | |
-| Vending machines (2) | Against the east wall | `VendingMachine` |
-| Lockers (a row of 6) | Against the west wall | `Locker` |
-| Map vote board | On the south wall, 16 × 9 | `MapVoteBoard` |
-| TV | Above the doors, inside, 12 × 7 | `OfficeTV` |
-| Leaderboards (2) | On the south wall, either side of the vote board | `LeaderboardBoard` |
+| Ball pit | x −28 to −8, z 430–450, floor sunk 3 studs | Two layers of anchored balls (classic red, blue, yellow, green) with `CanCollide` off, so players can wade in. **Not** tagged `BallPit` (no gameplay). |
+| Padded edge | Around the pit, 1.5 wide, 2.5 high, with a 6-stud gap on the east side | |
+| Tiny slide | Into the pit from the east side, starting at (−4, 440) | Decor; **not** tagged `Slide` |
+| Sign | On the west wall above the pit, Y 4–8 | "BALL PIT TESTING DEPARTMENT" |
 
-Style for now: plain office (carpet, desks, a water cooler, posters of the
-three venues). Leave open floor space for future mini activities.
+### Center: the spawn
+
+| Thing | Where | Notes |
+|---|---|---|
+| Spawn rug | Round, radius 10, centered at (40, 397) | Original confetti pattern |
+| SpawnLocation | 12 × 1 × 12, centered on the rug | `Transparency` 1, no decal, `Neutral` on |
+| Ball chandelier | Hanging over the rug at Y 16–20 | About 60 colorful balls on strings from one ring |
+| Slide sculpture | Along the ceiling from (0, 380) to (64, 380), Y 18–22 | A looping tube slide as decoration, no collision |
+
+**Keep clear:** the open floor x 20–60, z 374–425 (the main crowd area),
+apart from the rug.
+
+### South wall: reception and leaderboards
+
+| Thing | Where | Notes | Tag |
+|---|---|---|---|
+| Reception desk | Curved counter centered at (40, 438), 18 wide, 3 deep, 4 high, facing north | White top, orange front. On it: a monitor, a bell, a small plush, a "WELCOME!" sign. An office chair behind it. | |
+| Logo wall | South wall behind the desk, x 28–52, Y 6–16 | A big original logo (simple shapes for the three venues: a slide, a trampoline, a joystick) and "HQ" | |
+| Waiting area | Three chairs and a small table on each side of the desk, x 20–28 and x 52–60, z 440–446, facing north | Colorful chairs; a fake potted plant at each end | |
+| Leaderboards (4) | South wall, Y 8–20, each 12 wide: x −25 to −13, x −9 to 3, x 77 to 89, x 93 to 105 | Each has a `SurfaceGui` named `Display` and an attribute `Board`: `"AllTime"`, `"Weekly"`, `"TopLevels"`, `"TopSupporters"` (left to right) | `LeaderboardBoard` |
+
+### East side: shop, lockers and desks
+
+| Thing | Where | Notes | Tag |
+|---|---|---|---|
+| Vending machines (2) | Against the east wall, x 106–110, z 376–381 and z 383–388, facing west | 5 wide, 4 deep, 10 tall, glowing, full of toy prizes and snacks (no brands). An Attachment named `PromptPoint` on the front, 4 studs up. | `VendingMachine` |
+| Lockers (6) | Against the east wall, x 107.5–110, z 396–411 | 2.5 wide each, 8 tall, alternating wing colors. Each locker is its own model with a `PromptPoint` Attachment on the front, 4 studs up. | `Locker` |
+| Locker bench | x 100–102.5, z 398–409 | Padded bench | |
+| Desk pod | x 74–90, z 376–392: six desks in two rows of three | Colorful desks and chairs, monitors showing play place blueprints, toys and plushies on every desk | |
+| Water cooler | (100, 420) | | |
+
+### South-east corner: saved for later
+
+| Thing | Where | Notes |
+|---|---|---|
+| Empty space for mini activities | x 64–108, z 424–450 | Leave it empty. Mark it with yellow tape on the floor, a few cones, and a sign: "UNDER CONSTRUCTION: more fun coming soon" |
+
+## 4.5 Build order
+
+**Stop after each step** so the owner can look around in Studio.
+
+1. **Shell:** floor, walls, ceiling, the doorway, the double doors.
+2. **Screens and boards:** the door screen, the TV, the four leaderboards,
+   with their tags, attributes and `Display` SurfaceGuis.
+3. **Shop and lockers:** vending machines and lockers, with tags and
+   `PromptPoint` attachments.
+4. **Furniture:** lounge, reception and waiting area, desk pod, spawn rug
+   and `SpawnLocation`.
+5. **Fun stuff:** the decor ball pit, the plush bear, the ball chandelier,
+   the slide sculpture, posters, the logo wall, the "under construction"
+   corner.
+6. **Lighting.**
+7. Run every check in 2.8 on `Workspace.Office`.
 
 ---
 
@@ -1057,6 +1177,7 @@ make the buttons work.
 | `SeekerBlind` | No mockup yet; use the Bonked style | Full black background, `Countdown`, `RoleBanner`, `Tip` |
 | `MenuButtons` | `menu-buttons.png` | `Shop`, `Inventory`, `Quests`, `Settings` (each with `Icon`, `Label`, `Badge`), `Tooltip` |
 | `Intermission` | `menu-buttons.png` (top center) | `TimeText`, `Label`, `Bar` (`Fill`, `MapVoteMarker`, `MapVoteLabel`) |
+| `MapVote` | No mockup yet: same style as the mode vote at the bottom of `results.png`, one bigger card per map with a picture | The pop-up for the map vote in the office's last 15 seconds: `Header` (`Title`, `Timer`), template `MapOption` (`Thumbnail`, `MapName`, `Votes`, `YourVote`) |
 | `Prompt` | `menu-buttons.png` (walk-up prompt) | Template for a custom ProximityPrompt: `KeyBlock` (`Key`, `HoldText`), `Panel` (`Icon`, `ActionText`, `ObjectText`), `HoldBar` (`Fill`), `Line`, `Diamond` |
 | `PlayerList` | `player-list.png` | `Header` (`Count`), `List` (template `PlayerRow` with `Banner`, `Avatar`, `PlayerName`, `Title`, `Level`, `Prestige`, `RoleDot`), `Footer` |
 | `ProfileCard` | `player-list.png` | `Banner`, `Avatar`, `PlayerName`, `Username`, `Badges`, `Ping`, `Device`, `Country`, `Level` (`Bar`), `Showcase` (`Slot1`–`Slot3`), `AddFriend`, `Examine`, `Block`, `Close`, `ReportHint` |
@@ -1097,7 +1218,6 @@ Claude Code's job: **everything in `src/`**. Follow `CLAUDE.md` and
 
 Ask the owner before building these:
 
-- The final **office lobby** (Part 4 is a placeholder).
 - The **trampoline park** and **family fun center** maps (only short
   descriptions in `docs/GAME_DESIGN.md` section 9 so far).
 - Hammer skins and other cosmetics beyond the defaults.
